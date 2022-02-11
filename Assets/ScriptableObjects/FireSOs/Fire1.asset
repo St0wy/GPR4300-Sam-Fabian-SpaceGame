@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e368531eb1843f94d9d9d9a8f6ea69d6, type: 3}
   m_Name: Fire1
   m_EditorClassIdentifier: 
-  fireObject: {fileID: 0}
-  damage: 0
-  speed: 0
+  ammoObject: {fileID: 6522658363808179906, guid: 560def64a093283448dcd1ac17d4979b, type: 3}
+  damage: 1
+  speed: 1
