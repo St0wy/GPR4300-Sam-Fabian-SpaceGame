@@ -9,9 +9,9 @@ public class Health : MonoBehaviour
 	[SerializeField] private int maxHealthPoints = 15;
 	[SerializeField] private float destoryTime = 0f;
 	[SerializeField] private bool destroyWhenKilled = true;
-	
+
 	public delegate void HurtCallback(int healthPoint);
-	
+
 	public HurtCallback OnHurt { get; set; }
 	public bool IsAlive { get; private set; }
 	public int HealthPoints { get; private set; }
@@ -19,6 +19,7 @@ public class Health : MonoBehaviour
 	private void Awake()
 	{
 		HealthPoints = maxHealthPoints;
+		IsAlive = true;
 	}
 
 	/// <summary>

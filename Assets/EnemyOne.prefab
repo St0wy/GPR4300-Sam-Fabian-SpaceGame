@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 872141280730569631}
   - component: {fileID: 872141280730569630}
   - component: {fileID: 872141280730569827}
+  - component: {fileID: 2007910313396973306}
+  - component: {fileID: 5643728586238046449}
   m_Layer: 6
   m_Name: EnemyOne
   m_TagString: Untagged
@@ -136,3 +138,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2007910313396973306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872141280730569625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b07a38768a45c2831bf6a42552a32d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthPoints: 15
+  destoryTime: 0
+  destroyWhenKilled: 1
+--- !u!114 &5643728586238046449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872141280730569625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c819ef8248b40e4b9bb43bdda73dcf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
