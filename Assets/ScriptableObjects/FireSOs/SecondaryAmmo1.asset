@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e368531eb1843f94d9d9d9a8f6ea69d6, type: 3}
-  m_Name: Fire1
+  m_Name: SecondaryAmmo1
   m_EditorClassIdentifier: 
-  ammoObject: {fileID: 6522658363808179906, guid: 560def64a093283448dcd1ac17d4979b, type: 3}
-  damage: 1
-  speed: 10
+  ammoObject: {fileID: 5590565332786571899, guid: b06b2167ad0d7f14b9d402620dd42847, type: 3}
+  damage: 2
+  speed: 100
   disableTimer: 5
+  ammoType: 1

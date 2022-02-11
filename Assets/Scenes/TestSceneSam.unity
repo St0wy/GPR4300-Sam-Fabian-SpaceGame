@@ -408,9 +408,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f8c599df83981499895d44b220ee1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoSO:
+  primaryUsedAmmo: 0
+  primaryAmmoSO:
   - {fileID: 11400000, guid: 9269d8acbf1525241bd697ca2dadacfd, type: 2}
+  secondaryUsedAmmo: 0
+  secondaryAmmoSO:
   - {fileID: 11400000, guid: e140d4d125db10d4ea11426cc5f2fa0b, type: 2}
   shootPeriod: 0.1
-  primaryAmmoAmount: 10
-  SecondaryAmmoAmount: 10
+  secondaryAmmoAmount: 10

@@ -6,16 +6,24 @@ public class ShootingBehaviour : MonoBehaviour
 {
     private IInputHandler inputHandler;
 
-    [Header("Scriptable Object references")]
-    [SerializeField] public List<AmmoSO> ammoSO;
+    [Header("Ammo Lists")]
+    [Tooltip("This is used to select the currently Used Ammo")]
+    [SerializeField] int primaryUsedAmmo = 0;
+    [SerializeField] public List<AmmoSO> primaryAmmoSO;
+    [Tooltip("This is used to select the currently Used Secondary Ammo")]
+    [SerializeField] int secondaryUsedAmmo = 0;
+    [SerializeField] public List<AmmoSO> secondaryAmmoSO;
 
     [Header("Time")]
+    [Tooltip("Defines the time in between two primary shoots")]
     [SerializeField] float shootPeriod = 0.0f;
     private float timeToNextShoot = 0.0f;
+    
+    [Header("Variables")]
+    [SerializeField] private int secondaryAmmoAmount = 0;
 
-    private Stack<AmmoBehaviour> ammoPool;
-    [SerializeField] private int primaryAmmoAmount = 1;
-    [SerializeField] private int SecondaryAmmoAmount = 0;
+    private Stack<AmmoBehaviour> primaryAmmoPool;
+    private Stack<AmmoBehaviour> secondaryAmmoPool;
 
     private void Awake()
     {
@@ -23,7 +31,8 @@ public class ShootingBehaviour : MonoBehaviour
         inputHandler.FirePrimary += FirePrimary;
         inputHandler.FireSecondary += FireSecondary;
 
-        ammoPool = new Stack<AmmoBehaviour>();
+        primaryAmmoPool = new Stack<AmmoBehaviour>();
+        secondaryAmmoPool = new Stack<AmmoBehaviour>();
 
     }
     private void Update()
@@ -36,46 +45,55 @@ public class ShootingBehaviour : MonoBehaviour
         if(timeToNextShoot <= 0.0f)
         {
             //Get ammo from Pool
-            AmmoBehaviour newAmmo = PoolPrimaryAmmo();
-            newAmmo.Init(this, transform, ammoSO[0]);
-            newAmmo.GetComponent<Rigidbody2D>().AddForce(Vector2.up * ammoSO[0].Speed, ForceMode2D.Force);
+            AmmoBehaviour newAmmo = PrimaryAmmoPool();
+            newAmmo.Init(this, transform, primaryAmmoSO[primaryUsedAmmo]);
+            newAmmo.GetComponent<Rigidbody2D>().AddForce(Vector2.up * primaryAmmoSO[primaryUsedAmmo].Speed, ForceMode2D.Force);
             timeToNextShoot = shootPeriod;
         }
     }
+    private AmmoBehaviour PrimaryAmmoPool()
+    {
+        if (primaryAmmoPool.Count == 0)
+        {
+            return Instantiate(primaryAmmoSO[primaryUsedAmmo].AmmoObject).GetComponent<AmmoBehaviour>();
+        }
+
+        return primaryAmmoPool.Pop();
+    }
+
     private void FireSecondary()
     {
-        if(SecondaryAmmoAmount <= 0)
+        if(secondaryAmmoAmount <= 0)
         {
             return;
         }
-        AmmoBehaviour newAmmo = PoolSecondaryAmmo();
-        newAmmo.Init(this, transform, ammoSO[1]);
-        newAmmo.GetComponent<Rigidbody2D>().AddForce(Vector2.up * ammoSO[1].Speed, ForceMode2D.Force);
-        SecondaryAmmoAmount--;
+        AmmoBehaviour newAmmo = SecondaryAmmoPool();
+        newAmmo.Init(this, transform, secondaryAmmoSO[secondaryUsedAmmo]);
+        newAmmo.GetComponent<Rigidbody2D>().AddForce(Vector2.up * secondaryAmmoSO[secondaryUsedAmmo].Speed, ForceMode2D.Force);
+        secondaryAmmoAmount--;
     }
 
-    private AmmoBehaviour PoolPrimaryAmmo()
+    private AmmoBehaviour SecondaryAmmoPool()
     {
-        if(ammoPool.Count == 0)
+        if (secondaryAmmoPool.Count == 0)
         {
-            return Instantiate(ammoSO[0].AmmoObject).GetComponent<AmmoBehaviour>();
+            return Instantiate(secondaryAmmoSO[secondaryUsedAmmo].AmmoObject).GetComponent<AmmoBehaviour>();
         }
 
-        return ammoPool.Pop();
-    }
-    private AmmoBehaviour PoolSecondaryAmmo()
-    {
-        if (ammoPool.Count == 0)
-        {
-            return Instantiate(ammoSO[1].AmmoObject).GetComponent<AmmoBehaviour>();
-        }
-
-        return ammoPool.Pop();
+        return secondaryAmmoPool.Pop();
     }
 
     public void TakeBack(AmmoBehaviour ammo)
     {
         ammo.gameObject.SetActive(false);
-        ammoPool.Push(ammo);
+        if(ammo.AmmoType == 0)
+        {
+            primaryAmmoPool.Push(ammo);
+        }
+        if(ammo.AmmoType == 1)
+        {
+            secondaryAmmoPool.Push(ammo);
+        }
     }
+
 }

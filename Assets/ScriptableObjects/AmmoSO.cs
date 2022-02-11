@@ -9,6 +9,8 @@ public class AmmoSO : ScriptableObject
     [SerializeField] private int damage = 0;
     [SerializeField] private float speed = 0.0f;
     [SerializeField] private float disableTimer = 5.0f;
+    public enum AmmoTypes { Primary, Secondary}
+    [SerializeField] private AmmoTypes ammoType;
 
     #region Getters
 
@@ -16,6 +18,7 @@ public class AmmoSO : ScriptableObject
     public int Damage => damage;
     public float Speed => speed;
     public float DisableTimer => disableTimer;
+    public int AmmoType => ((int)ammoType);
 
     #endregion
 
