@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoObject: {fileID: 6522658363808179906, guid: 560def64a093283448dcd1ac17d4979b, type: 3}
   damage: 1
-  speed: 1
+  speed: 10
+  disableTimer: 5
