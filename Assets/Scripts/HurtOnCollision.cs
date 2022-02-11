@@ -8,6 +8,7 @@ public class HurtOnCollision : MonoBehaviour
 	private void OnCollisionEnter2D(Collision2D col)
 	{
 		var oponentHealth = col.gameObject.GetComponent<Health>();
+		if (oponentHealth == null) return;
 
 		oponentHealth.ReduceHealth(damage);
 	}
