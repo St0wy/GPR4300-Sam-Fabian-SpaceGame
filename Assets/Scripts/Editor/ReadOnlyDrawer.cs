@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using SpaceGame;
+using UnityEditor;
 using UnityEngine;
 
 namespace Editor

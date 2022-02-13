@@ -1,75 +1,70 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
-public enum EnemyTwoState
+namespace SpaceGame.Enemies
 {
-	Falling,
-	ShootingRight,
-	ShootingLeft,
-}
-
-public class EnemyTwoInputHandler : MonoBehaviour, IInputHandler
-{
-	public Vector2 InputVector { get; private set; }
-	public event IInputHandler.InputEventHandler FirePrimary;
-	public event IInputHandler.InputEventHandler FireSecondary;
-	public event IInputHandler.InputEventHandler Pause;
-
-	[SerializeField] private Transform[] lines;
-	[ReadOnly] [SerializeField] private int chosenLineIndex;
-	[SerializeField] private float maxPosLeft = -8f;
-	[SerializeField] private float maxPosRight = 8f;
-
-	private EnemyTwoState state;
-
-	private void Awake()
+	public class EnemyTwoInputHandler : MonoBehaviour, IInputHandler
 	{
-		InputVector = new Vector2(0, -1);
-		state = EnemyTwoState.Falling;
-		chosenLineIndex = Random.Range(0, lines.Length);
-	}
+		public Vector2 InputVector { get; private set; }
+		public event IInputHandler.InputEventHandler FirePrimary;
+		public event IInputHandler.InputEventHandler FireSecondary;
+		public event IInputHandler.InputEventHandler Pause;
 
-	private void Update()
-	{
-		switch (state)
+		[SerializeField] private Transform[] lines;
+		[ReadOnly] [SerializeField] private int chosenLineIndex;
+		[SerializeField] private float maxPosLeft = -8f;
+		[SerializeField] private float maxPosRight = 8f;
+
+		private EnemyTwoState state;
+
+		private void Awake()
 		{
-			default:
-			case EnemyTwoState.Falling:
-				HandleFallingState();
-				break;
-			case EnemyTwoState.ShootingRight:
-				if (transform.position.x >= maxPosRight)
-				{
-					state = EnemyTwoState.ShootingLeft;
-					InputVector = new Vector2(-1, 0);
-				}
-				break;
-			case EnemyTwoState.ShootingLeft:
-				if (transform.position.x <= maxPosLeft)
-				{
-					state = EnemyTwoState.ShootingRight;
-					InputVector = new Vector2(1, 0);
-				}
-				break;
+			InputVector = new Vector2(0, -1);
+			state = EnemyTwoState.Falling;
+			chosenLineIndex = Random.Range(0, lines.Length);
 		}
-	}
 
-	private void OnDrawGizmos()
-	{
-		foreach (Transform line in lines)
+		private void Update()
 		{
-			float y = line.position.y;
-			Gizmos.DrawLine(new Vector3(-10, y), new Vector3(10, y));
+			switch (state)
+			{
+				default:
+				case EnemyTwoState.Falling:
+					HandleFallingState();
+					break;
+				case EnemyTwoState.ShootingRight:
+					if (transform.position.x >= maxPosRight)
+					{
+						state = EnemyTwoState.ShootingLeft;
+						InputVector = new Vector2(-1, 0);
+					}
+					break;
+				case EnemyTwoState.ShootingLeft:
+					if (transform.position.x <= maxPosLeft)
+					{
+						state = EnemyTwoState.ShootingRight;
+						InputVector = new Vector2(1, 0);
+					}
+					break;
+			}
 		}
-	}
 
-	private void HandleFallingState()
-	{
-		// Check if we hit the chosen line
-		if (!(transform.position.y <= lines[chosenLineIndex].position.y)) return;
+		private void OnDrawGizmos()
+		{
+			foreach (Transform line in lines)
+			{
+				float y = line.position.y;
+				Gizmos.DrawLine(new Vector3(-10, y), new Vector3(10, y));
+			}
+		}
 
-		state = EnemyTwoState.ShootingRight;
-		InputVector = new Vector2(1, 0);
+		private void HandleFallingState()
+		{
+			// Check if we hit the chosen line
+			if (!(transform.position.y <= lines[chosenLineIndex].position.y)) return;
+
+			state = EnemyTwoState.ShootingRight;
+			InputVector = new Vector2(1, 0);
+		}
 	}
 }

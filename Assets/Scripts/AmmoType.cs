@@ -1,5 +1,8 @@
-﻿public enum AmmoType
+﻿namespace SpaceGame
 {
-	Primary,
-	Secondary,
+	public enum AmmoType
+	{
+		Primary,
+		Secondary,
+	}
 }

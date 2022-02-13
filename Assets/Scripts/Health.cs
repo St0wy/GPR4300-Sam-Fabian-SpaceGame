@@ -1,45 +1,47 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-/// <summary>
-/// Script to put on gameobjects that must have health like the player or enemies.
-/// </summary>
-public class Health : MonoBehaviour
+namespace SpaceGame
 {
-	[SerializeField] private int maxHealthPoints = 15;
-	[SerializeField] private float destoryTime = 0f;
-	[SerializeField] private bool destroyWhenKilled = true;
-
-	public delegate void HurtCallback(int healthPoint);
-
-	public HurtCallback OnHurt { get; set; }
-	public bool IsAlive { get; private set; }
-	public int HealthPoints { get; private set; }
-
-	private void Awake()
-	{
-		HealthPoints = maxHealthPoints;
-		IsAlive = true;
-	}
-
 	/// <summary>
-	/// Reduces the health of the gameobject and kills it if health = 0.
+	/// Script to put on gameobjects that must have health like the player or enemies.
 	/// </summary>
-	/// <param name="ammount">The ammount of health to substract. Defaults to 1.</param>
-	public void ReduceHealth(int ammount = 1)
+	public class Health : MonoBehaviour
 	{
-		HealthPoints -= ammount;
+		[SerializeField] private int maxHealthPoints = 15;
+		[SerializeField] private float destroyTime;
+		[SerializeField] private bool destroyWhenKilled = true;
 
-		if (HealthPoints <= 0)
+		public delegate void HurtCallback(int healthPoint);
+
+		public HurtCallback OnHurt { get; set; }
+		public bool IsAlive { get; private set; }
+		public int HealthPoints { get; private set; }
+
+		private void Awake()
 		{
-			IsAlive = false;
+			HealthPoints = maxHealthPoints;
+			IsAlive = true;
 		}
 
-		OnHurt?.Invoke(HealthPoints);
-
-		if (!IsAlive && destroyWhenKilled)
+		/// <summary>
+		/// Reduces the health of the gameobject and kills it if health = 0.
+		/// </summary>
+		/// <param name="ammount">The ammount of health to substract. Defaults to 1.</param>
+		public void ReduceHealth(int ammount = 1)
 		{
-			Destroy(gameObject, destoryTime);
+			HealthPoints -= ammount;
+
+			if (HealthPoints <= 0)
+			{
+				IsAlive = false;
+			}
+
+			OnHurt?.Invoke(HealthPoints);
+
+			if (!IsAlive && destroyWhenKilled)
+			{
+				Destroy(gameObject, destroyTime);
+			}
 		}
 	}
 }

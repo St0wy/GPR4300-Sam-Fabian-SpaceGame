@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 
-public interface IInputHandler
+namespace SpaceGame
 {
-	public delegate void InputEventHandler();
+	public interface IInputHandler
+	{
+		public delegate void InputEventHandler();
 
-	public Vector2 InputVector { get; }
+		public Vector2 InputVector { get; }
 
-	event InputEventHandler FirePrimary;
-	event InputEventHandler FireSecondary;
-	event InputEventHandler Pause;
+		event InputEventHandler FirePrimary;
+		event InputEventHandler FireSecondary;
+		event InputEventHandler Pause;
+	}
 }

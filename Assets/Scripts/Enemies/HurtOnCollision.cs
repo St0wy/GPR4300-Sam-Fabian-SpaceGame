@@ -1,15 +1,17 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class HurtOnCollision : MonoBehaviour
+namespace SpaceGame.Enemies
 {
-	[SerializeField] private int damage = 3;
-
-	private void OnCollisionEnter2D(Collision2D col)
+	public class HurtOnCollision : MonoBehaviour
 	{
-		var oponentHealth = col.gameObject.GetComponent<Health>();
-		if (oponentHealth == null) return;
+		[SerializeField] private int damage = 3;
 
-		oponentHealth.ReduceHealth(damage);
+		private void OnCollisionEnter2D(Collision2D col)
+		{
+			var oponentHealth = col.gameObject.GetComponent<Health>();
+			if (oponentHealth == null) return;
+
+			oponentHealth.ReduceHealth(damage);
+		}
 	}
 }

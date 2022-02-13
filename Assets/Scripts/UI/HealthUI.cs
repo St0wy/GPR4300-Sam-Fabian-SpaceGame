@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-namespace UI
+namespace SpaceGame.UI
 {
 	public class HealthUI : MonoBehaviour
 	{

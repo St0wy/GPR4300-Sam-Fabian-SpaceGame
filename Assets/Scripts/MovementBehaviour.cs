@@ -1,27 +1,29 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class MovementBehaviour : MonoBehaviour
+namespace SpaceGame
 {
-	[SerializeField] private float speed = 1f;
-
-	private IInputHandler inputHandler;
-
-	private void Awake()
+	public class MovementBehaviour : MonoBehaviour
 	{
-		inputHandler = GetComponent<IInputHandler>();
-		inputHandler.Pause += Pause;
-	}
+		[SerializeField] private float speed = 1f;
 
-	private void FixedUpdate()
-	{
-		Vector3 movement = inputHandler.InputVector * speed * Time.deltaTime;
+		private IInputHandler inputHandler;
 
-		transform.position += movement;
-	}
+		private void Awake()
+		{
+			inputHandler = GetComponent<IInputHandler>();
+			inputHandler.Pause += Pause;
+		}
 
-	private void Pause()
-	{
-		Debug.Log("C'est la pause");
+		private void FixedUpdate()
+		{
+			Vector3 movement = inputHandler.InputVector * speed * Time.deltaTime;
+
+			transform.position += movement;
+		}
+
+		private void Pause()
+		{
+			Debug.Log("C'est la pause");
+		}
 	}
 }

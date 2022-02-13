@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ScriptableObjects
+namespace SpaceGame.ScriptableObjects
 {
 	[CreateAssetMenu(fileName = "defaultAmmo", menuName = "Ammo")]
 	public class AmmoSO : ScriptableObject

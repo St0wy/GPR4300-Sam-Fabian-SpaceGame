@@ -1,15 +1,17 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class EnemyOneInputHandler : MonoBehaviour, IInputHandler
+namespace SpaceGame.Enemies
 {
-	public Vector2 InputVector { get; private set; }
-	public event IInputHandler.InputEventHandler FirePrimary;
-	public event IInputHandler.InputEventHandler FireSecondary;
-	public event IInputHandler.InputEventHandler Pause;
-
-	private void Awake()
+	public class EnemyOneInputHandler : MonoBehaviour, IInputHandler
 	{
-		InputVector = new Vector2(0, -1);
+		public Vector2 InputVector { get; private set; }
+		public event IInputHandler.InputEventHandler FirePrimary;
+		public event IInputHandler.InputEventHandler FireSecondary;
+		public event IInputHandler.InputEventHandler Pause;
+
+		private void Awake()
+		{
+			InputVector = new Vector2(0, -1);
+		}
 	}
 }
