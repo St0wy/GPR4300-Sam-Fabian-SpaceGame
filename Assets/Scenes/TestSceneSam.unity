@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c72696c02be49318f54dcc1daffee8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 700
+  speed: 10
 --- !u!1 &2929456440337528687
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,11 +408,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f8c599df83981499895d44b220ee1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryUsedAmmo: 0
   primaryAmmoSO:
   - {fileID: 11400000, guid: 9269d8acbf1525241bd697ca2dadacfd, type: 2}
-  secondaryUsedAmmo: 0
   secondaryAmmoSO:
   - {fileID: 11400000, guid: e140d4d125db10d4ea11426cc5f2fa0b, type: 2}
+  primaryUsedAmmo: 0
+  secondaryUsedAmmo: 0
   shootPeriod: 0.1
   secondaryAmmoAmount: 10
