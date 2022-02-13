@@ -11,7 +11,11 @@ namespace SpaceGame.Enemies
 		public event IInputHandler.InputEventHandler Pause;
 
 		[SerializeField] private Transform[] lines;
-		[ReadOnly] [SerializeField] private int chosenLineIndex;
+
+		[ReadOnly]
+		[SerializeField]
+		private int chosenLineIndex;
+
 		[SerializeField] private float maxPosLeft = -8f;
 		[SerializeField] private float maxPosRight = 8f;
 
@@ -38,6 +42,7 @@ namespace SpaceGame.Enemies
 						state = EnemyTwoState.ShootingLeft;
 						InputVector = new Vector2(-1, 0);
 					}
+
 					break;
 				case EnemyTwoState.ShootingLeft:
 					if (transform.position.x <= maxPosLeft)
@@ -45,6 +50,7 @@ namespace SpaceGame.Enemies
 						state = EnemyTwoState.ShootingRight;
 						InputVector = new Vector2(1, 0);
 					}
+
 					break;
 			}
 		}

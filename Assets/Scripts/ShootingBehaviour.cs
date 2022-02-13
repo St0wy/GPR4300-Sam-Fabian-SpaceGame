@@ -23,11 +23,11 @@ namespace SpaceGame
 		[Header("Time")]
 		[Tooltip("Defines the time in between two primary shoots")]
 		[SerializeField]
-		private float shootPeriod;
+		private float shootPeriod = 0.1f;
 
 		[Header("Variables")]
 		[SerializeField]
-		private int secondaryAmmoAmount;
+		private int secondaryAmmoAmount = 10;
 
 		private float timeToNextShoot;
 		private IInputHandler inputHandler;
