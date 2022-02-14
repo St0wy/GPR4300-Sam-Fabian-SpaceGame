@@ -205,8 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealthPoints: 15
-  destroyTime: 0
   destroyWhenKilled: 1
+  destroyTime: 0
 --- !u!114 &2551650675439570400
 MonoBehaviour:
   m_ObjectHideFlags: 0

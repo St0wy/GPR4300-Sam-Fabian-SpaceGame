@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using MyBox;
+using UnityEngine;
 
 namespace SpaceGame
 {
@@ -8,10 +9,13 @@ namespace SpaceGame
 	public class Health : MonoBehaviour
 	{
 		[SerializeField] private int maxHealthPoints = 15;
-		[SerializeField] private float destroyTime;
 		[SerializeField] private bool destroyWhenKilled = true;
 
-		public delegate void HurtCallback(int healthPoint);
+		[ConditionalField(nameof(destroyWhenKilled))]
+		[SerializeField]
+		private float destroyTime;
+
+		public delegate void HurtCallback(int healthPoints);
 
 		public HurtCallback OnHurt { get; set; }
 		public bool IsAlive { get; private set; }
@@ -43,6 +47,5 @@ namespace SpaceGame
 				Destroy(gameObject, destroyTime);
 			}
 		}
-
 	}
 }
