@@ -7,9 +7,8 @@ namespace SpaceGame.Ammo
 {
 	public class ShootingBehaviour : MonoBehaviour
 	{
-		[SerializeField] public List<AmmoScriptableObject> primaryAmmoScriptableObjects;
-
-		[SerializeField] public List<AmmoScriptableObject> secondaryAmmoScriptableObjects;
+		[SerializeField] private List<AmmoScriptableObject> primaryAmmoScriptableObjects;
+		[SerializeField] private List<AmmoScriptableObject> secondaryAmmoScriptableObjects;
 
 		[Header("Ammo Lists")]
 		[Tooltip("This is used to select the currently Used Ammo")]
@@ -28,6 +27,8 @@ namespace SpaceGame.Ammo
 		[Header("Variables")]
 		[SerializeField]
 		private int secondaryAmmoAmount = 10;
+
+		[SerializeField] private SoundEffectScritableObject primaryShootSoundEffect;
 
 		private float timeToNextShoot;
 		private IInputHandler inputHandler;
@@ -53,12 +54,18 @@ namespace SpaceGame.Ammo
 		{
 			if (!(timeToNextShoot <= 0.0f)) return;
 
-			//Get ammo from Pool
+			// Get ammo from Pool
 			AmmoBehaviour newAmmo = PrimaryAmmoPool();
 			newAmmo.Init(this, transform, primaryAmmoScriptableObjects[primaryUsedAmmo]);
 			newAmmo.GetComponent<Rigidbody2D>()
 				.AddForce(Vector2.up * primaryAmmoScriptableObjects[primaryUsedAmmo].Speed, ForceMode2D.Force);
 			timeToNextShoot = shootPeriod;
+
+			// Play the sound effect if it has been assigned
+			if (primaryShootSoundEffect != null)
+			{
+				primaryShootSoundEffect.Play();
+			}
 		}
 
 		private void FireSecondary()
@@ -82,7 +89,8 @@ namespace SpaceGame.Ammo
 		private AmmoBehaviour SecondaryAmmoPool()
 		{
 			return secondaryAmmoPool.Count == 0
-				? Instantiate(secondaryAmmoScriptableObjects[secondaryUsedAmmo].AmmoObject).GetComponent<AmmoBehaviour>()
+				? Instantiate(secondaryAmmoScriptableObjects[secondaryUsedAmmo].AmmoObject)
+					.GetComponent<AmmoBehaviour>()
 				: secondaryAmmoPool.Pop();
 		}
 
@@ -103,8 +111,8 @@ namespace SpaceGame.Ammo
 		}
 
 		public void FillSecondaryAmmo(int amount)
-        {
+		{
 			secondaryAmmoAmount += amount;
-        }
+		}
 	}
 }

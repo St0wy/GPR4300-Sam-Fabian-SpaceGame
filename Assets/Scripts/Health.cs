@@ -8,7 +8,10 @@ namespace SpaceGame
 	/// </summary>
 	public class Health : MonoBehaviour
 	{
-		[SerializeField] private int maxHealthPoints = 15;
+		[InitializationField]
+		[SerializeField]
+		private int maxHealthPoints = 15;
+
 		[SerializeField] private bool destroyWhenKilled = true;
 
 		[ConditionalField(nameof(destroyWhenKilled))]
