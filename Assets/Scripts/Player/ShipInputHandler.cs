@@ -11,7 +11,21 @@ namespace SpaceGame.Player
 		public event IInputHandler.InputEventHandler FireSecondary;
 		public event IInputHandler.InputEventHandler Pause;
 
-		[UsedImplicitly]
+		private bool fire = false;
+
+        private void Update()
+        {
+            if (fire)
+            {
+				FirePrimary?.Invoke();
+			}
+			else if (!fire)
+            {
+
+            }
+        }
+
+        [UsedImplicitly]
 		private void OnMove(InputValue value)
 		{
 			InputVector = value.Get<Vector2>();
@@ -26,7 +40,8 @@ namespace SpaceGame.Player
 		[UsedImplicitly]
 		private void OnFire()
 		{
-			FirePrimary?.Invoke();
+			//FirePrimary?.Invoke();
+			fire = !fire;
 		}
 
 		[UsedImplicitly]

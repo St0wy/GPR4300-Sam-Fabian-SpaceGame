@@ -10,7 +10,11 @@ namespace SpaceGame.Ammo
 		[SerializeField] private int damage;
 		[SerializeField] private AmmoType ammoType = AmmoType.Primary;
 
-		public AmmoType AmmoType => ammoType;
+        #region Properties
+
+        public AmmoType AmmoType => ammoType;
+
+        #endregion
 
 		public void Init(ShootingBehaviour shootingBehaviour, Transform spawnPos, AmmoScriptableObject ammoScriptableObject)
 		{
@@ -41,7 +45,7 @@ namespace SpaceGame.Ammo
 			}
 		}
 
-		private void OnTriggerEnter(Collider other)
+		private void OnTriggerEnter2D(Collider2D other)
 		{
 			if (!other.CompareTag("Enemy")) return;
 

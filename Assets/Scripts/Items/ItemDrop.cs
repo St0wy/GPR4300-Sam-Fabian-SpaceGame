@@ -12,6 +12,7 @@ namespace SpaceGame.Items
 		[SerializeField] private Health health;
 		[SerializeField] private List<Item> items;
 
+
 		private void Awake()
 		{
 			health = GetComponent<Health>();
@@ -20,9 +21,11 @@ namespace SpaceGame.Items
 		// Update is called once per frame
 		private void Update()
 		{
+			float random = Random.value;
+
 			if (health.HealthPoints > 0) return;
 
-			if (items.Count != 0)
+			if (items.Count != 0 && random >= 0.5f)
 			{
 				Instantiate(items[0]);
 			}

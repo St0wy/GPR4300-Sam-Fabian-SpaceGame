@@ -851,10 +851,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship
       objectReference: {fileID: 0}
-    - target: {fileID: 2551650675439570400, guid: b19d48f93409f494b92f0b047814172c, type: 3}
-      propertyPath: primaryShootSoundEffect
-      value: 
-      objectReference: {fileID: 11400000, guid: f81829255f1a37c42bac32d2772324f8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b19d48f93409f494b92f0b047814172c, type: 3}
 --- !u!1001 &5510268096647292305
@@ -1016,10 +1012,6 @@ PrefabInstance:
     - target: {fileID: 8010429231689963994, guid: 8dbd94d71eb9eab41be7c7d4450a0209, type: 3}
       propertyPath: m_Name
       value: EnemyTwo
-      objectReference: {fileID: 0}
-    - target: {fileID: 8010429231689963995, guid: 8dbd94d71eb9eab41be7c7d4450a0209, type: 3}
-      propertyPath: lines.Array.size
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8010429231689963995, guid: 8dbd94d71eb9eab41be7c7d4450a0209, type: 3}
       propertyPath: lines.Array.data[0]

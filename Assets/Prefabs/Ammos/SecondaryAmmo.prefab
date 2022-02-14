@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableTimer: Infinity
-  damage: 0
-  ammoType: 0
+  damage: 10
+  ammoType: 1
 --- !u!95 &5332184788099145588
 Animator:
   serializedVersion: 3

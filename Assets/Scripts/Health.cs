@@ -44,6 +44,7 @@ namespace SpaceGame
 			}
 
 			OnHurt?.Invoke(HealthPoints);
+			
 
 			if (!IsAlive && destroyWhenKilled)
 			{

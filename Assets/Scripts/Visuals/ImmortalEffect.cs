@@ -3,7 +3,7 @@ using UnityEngine;
 namespace SpaceGame.Visuals
 {
     [RequireComponent(typeof(SpriteRenderer))]
-    public class SineWaveEffect : MonoBehaviour
+    public class ImmortalEffect : MonoBehaviour
     {
         [SerializeField] private bool enable;
 
@@ -12,11 +12,15 @@ namespace SpaceGame.Visuals
         private Color color;
         private Color originalColor;
 
+        #region Properties
+
         public bool Enable
         {
             get => enable;
             set => enable = value;
         }
+
+        #endregion
 
         private void Start()
         {
