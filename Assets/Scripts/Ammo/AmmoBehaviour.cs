@@ -1,7 +1,7 @@
 using SpaceGame.ScriptableObjects;
 using UnityEngine;
 
-namespace SpaceGame
+namespace SpaceGame.Ammo
 {
 	public class AmmoBehaviour : MonoBehaviour
 	{
@@ -12,7 +12,7 @@ namespace SpaceGame
 
 		public AmmoType AmmoType => ammoType;
 
-		public void Init(ShootingBehaviour shootingBehaviour, Transform spawnPos, AmmoScriptableObject ammoSO)
+		public void Init(ShootingBehaviour shootingBehaviour, Transform spawnPos, AmmoScriptableObject ammoScriptableObject)
 		{
 			// Gives the ShootingBehaviour as ref
 			shooter = shootingBehaviour;
@@ -23,9 +23,9 @@ namespace SpaceGame
 			myTransform.rotation = spawnPos.rotation;
 
 			// Set Main variables
-			damage = ammoSO.Damage;
-			disableTimer = ammoSO.DisableTimer;
-			ammoType = ammoSO.AmmoType;
+			damage = ammoScriptableObject.Damage;
+			disableTimer = ammoScriptableObject.DisableTimer;
+			ammoType = ammoScriptableObject.AmmoType;
 
 			// Enable object once placed
 			gameObject.SetActive(true);

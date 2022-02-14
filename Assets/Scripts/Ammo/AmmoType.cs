@@ -1,4 +1,4 @@
-﻿namespace SpaceGame
+﻿namespace SpaceGame.Ammo
 {
 	public enum AmmoType
 	{

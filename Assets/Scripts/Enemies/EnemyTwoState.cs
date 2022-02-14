@@ -1,4 +1,4 @@
-﻿namespace SpaceGame
+﻿namespace SpaceGame.Enemies
 {
 	public enum EnemyTwoState
 	{

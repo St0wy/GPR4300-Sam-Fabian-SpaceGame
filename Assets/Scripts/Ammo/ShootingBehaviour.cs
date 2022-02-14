@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using SpaceGame.ScriptableObjects;
 using UnityEngine;
 
-namespace SpaceGame
+namespace SpaceGame.Ammo
 {
 	public class ShootingBehaviour : MonoBehaviour
 	{
-		[SerializeField] public List<AmmoScriptableObject> primaryAmmoSO;
+		[SerializeField] public List<AmmoScriptableObject> primaryAmmoScriptableObjects;
 
-		[SerializeField] public List<AmmoScriptableObject> secondaryAmmoSO;
+		[SerializeField] public List<AmmoScriptableObject> secondaryAmmoScriptableObjects;
 
 		[Header("Ammo Lists")]
 		[Tooltip("This is used to select the currently Used Ammo")]
@@ -55,9 +55,9 @@ namespace SpaceGame
 
 			//Get ammo from Pool
 			AmmoBehaviour newAmmo = PrimaryAmmoPool();
-			newAmmo.Init(this, transform, primaryAmmoSO[primaryUsedAmmo]);
+			newAmmo.Init(this, transform, primaryAmmoScriptableObjects[primaryUsedAmmo]);
 			newAmmo.GetComponent<Rigidbody2D>()
-				.AddForce(Vector2.up * primaryAmmoSO[primaryUsedAmmo].Speed, ForceMode2D.Force);
+				.AddForce(Vector2.up * primaryAmmoScriptableObjects[primaryUsedAmmo].Speed, ForceMode2D.Force);
 			timeToNextShoot = shootPeriod;
 		}
 
@@ -66,23 +66,23 @@ namespace SpaceGame
 			if (secondaryAmmoAmount <= 0) return;
 
 			AmmoBehaviour newAmmo = SecondaryAmmoPool();
-			newAmmo.Init(this, transform, secondaryAmmoSO[secondaryUsedAmmo]);
+			newAmmo.Init(this, transform, secondaryAmmoScriptableObjects[secondaryUsedAmmo]);
 			newAmmo.GetComponent<Rigidbody2D>()
-				.AddForce(Vector2.up * secondaryAmmoSO[secondaryUsedAmmo].Speed, ForceMode2D.Force);
+				.AddForce(Vector2.up * secondaryAmmoScriptableObjects[secondaryUsedAmmo].Speed, ForceMode2D.Force);
 			secondaryAmmoAmount--;
 		}
 
 		private AmmoBehaviour PrimaryAmmoPool()
 		{
 			return primaryAmmoPool.Count == 0
-				? Instantiate(primaryAmmoSO[primaryUsedAmmo].AmmoObject).GetComponent<AmmoBehaviour>()
+				? Instantiate(primaryAmmoScriptableObjects[primaryUsedAmmo].AmmoObject).GetComponent<AmmoBehaviour>()
 				: primaryAmmoPool.Pop();
 		}
 
 		private AmmoBehaviour SecondaryAmmoPool()
 		{
 			return secondaryAmmoPool.Count == 0
-				? Instantiate(secondaryAmmoSO[secondaryUsedAmmo].AmmoObject).GetComponent<AmmoBehaviour>()
+				? Instantiate(secondaryAmmoScriptableObjects[secondaryUsedAmmo].AmmoObject).GetComponent<AmmoBehaviour>()
 				: secondaryAmmoPool.Pop();
 		}
 

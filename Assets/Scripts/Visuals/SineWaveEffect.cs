@@ -1,35 +1,30 @@
 using UnityEngine;
 
-namespace SpaceGame
+namespace SpaceGame.Visuals
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class SineWaveEffect : MonoBehaviour
     {
-
         [SerializeField] private bool enable;
 
         public float period = 2.0f;
         private float alphaFactor;
         private Color color;
-        Color originalColor;
-
-        #region Properties
+        private Color originalColor;
 
         public bool Enable
         {
-            get { return enable; }
-            set { enable = value; }
+            get => enable;
+            set => enable = value;
         }
 
-        #endregion
-
-        void Start()
+        private void Start()
         {
             color = GetComponent<SpriteRenderer>().color;
             originalColor = color;
         }
 
-        void Update()
+        private void Update()
         {
             if (enable)
             {
@@ -41,6 +36,7 @@ namespace SpaceGame
             }
             
         }
+        
         private void SineEffect()
         {
             if (period <= Mathf.Epsilon) { return; }

@@ -1,8 +1,7 @@
-﻿using SpaceGame;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
-namespace Editor
+namespace SpaceGame.Editor
 {
 	/// <summary>
 	/// This class contain custom drawer for ReadOnly attribute.

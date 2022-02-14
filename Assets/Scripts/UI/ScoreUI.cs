@@ -5,7 +5,7 @@ namespace SpaceGame.UI
 {
     public class ScoreUI : MonoBehaviour
     {
-        [SerializeField] private int score = 0;
+        [SerializeField] private int score;
         private TextMeshProUGUI text;
 
         private void Awake()
@@ -14,13 +14,13 @@ namespace SpaceGame.UI
             score = 0;
         }
 
-        void Start()
+        private void Start()
         {
             text.text = score.ToString();
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             text.text = score.ToString();
         }

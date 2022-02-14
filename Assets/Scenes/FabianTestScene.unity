@@ -530,41 +530,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Asset: {fileID: -944628639613478452, guid: 655d12f64dae71c42bda5baafa20a2a4, type: 3}
   m_ActionId: 9672ea83-ef25-4543-98f7-b7f665822669
---- !u!1 &1518496955 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2551650675439570335, guid: b19d48f93409f494b92f0b047814172c, type: 3}
-  m_PrefabInstance: {fileID: 2551650676957798692}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1518496963 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2551650675439570407, guid: b19d48f93409f494b92f0b047814172c, type: 3}
   m_PrefabInstance: {fileID: 2551650676957798692}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1518496955}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1b07a38768a45c2831bf6a42552a32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1518496965
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1518496955}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 182b33cf8f94f3245b522f31406d5623, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1684615048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -821,10 +797,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2551650675439570328, guid: b19d48f93409f494b92f0b047814172c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -3352868958805856340, guid: c99574edd9de216459692f2c1db2cf13, type: 3}
     - target: {fileID: 2551650675439570329, guid: b19d48f93409f494b92f0b047814172c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -869,10 +841,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2551650675439570330, guid: b19d48f93409f494b92f0b047814172c, type: 3}
-      propertyPath: m_UIInputModule
-      value: 
-      objectReference: {fileID: 122965638}
     - target: {fileID: 2551650675439570335, guid: b19d48f93409f494b92f0b047814172c, type: 3}
       propertyPath: m_Name
       value: Ship

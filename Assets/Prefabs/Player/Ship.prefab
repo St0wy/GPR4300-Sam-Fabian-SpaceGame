@@ -219,9 +219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f8c599df83981499895d44b220ee1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryAmmoSO:
+  primaryAmmoScriptableObjects:
   - {fileID: 11400000, guid: 9269d8acbf1525241bd697ca2dadacfd, type: 2}
-  secondaryAmmoSO:
+  secondaryAmmoScriptableObjects:
   - {fileID: 11400000, guid: e140d4d125db10d4ea11426cc5f2fa0b, type: 2}
   primaryUsedAmmo: 0
   secondaryUsedAmmo: 0

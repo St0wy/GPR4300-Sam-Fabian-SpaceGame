@@ -16,7 +16,7 @@ namespace SpaceGame
 
 		private void FixedUpdate()
 		{
-			Vector3 movement = inputHandler.InputVector * speed * Time.deltaTime;
+			Vector3 movement = inputHandler.InputVector * (speed * Time.deltaTime);
 
 			transform.position += movement;
 		}
