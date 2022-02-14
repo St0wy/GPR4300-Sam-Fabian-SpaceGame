@@ -12,7 +12,7 @@ namespace SpaceGame
 
 		public AmmoType AmmoType => ammoType;
 
-		public void Init(ShootingBehaviour shootingBehaviour, Transform spawnPos, AmmoSO ammoSO)
+		public void Init(ShootingBehaviour shootingBehaviour, Transform spawnPos, AmmoScriptableObject ammoSO)
 		{
 			// Gives the ShootingBehaviour as ref
 			shooter = shootingBehaviour;

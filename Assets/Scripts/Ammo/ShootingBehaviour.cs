@@ -7,9 +7,9 @@ namespace SpaceGame
 {
 	public class ShootingBehaviour : MonoBehaviour
 	{
-		[SerializeField] public List<AmmoSO> primaryAmmoSO;
+		[SerializeField] public List<AmmoScriptableObject> primaryAmmoSO;
 
-		[SerializeField] public List<AmmoSO> secondaryAmmoSO;
+		[SerializeField] public List<AmmoScriptableObject> secondaryAmmoSO;
 
 		[Header("Ammo Lists")]
 		[Tooltip("This is used to select the currently Used Ammo")]
@@ -101,5 +101,10 @@ namespace SpaceGame
 					throw new ArgumentOutOfRangeException();
 			}
 		}
+
+		public void FillSecondaryAmmo(int amount)
+        {
+			secondaryAmmoAmount += amount;
+        }
 	}
 }

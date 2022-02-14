@@ -43,5 +43,6 @@ namespace SpaceGame
 				Destroy(gameObject, destroyTime);
 			}
 		}
+
 	}
 }

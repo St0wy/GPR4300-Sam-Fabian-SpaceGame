@@ -3,7 +3,7 @@ using UnityEngine;
 namespace SpaceGame.ScriptableObjects
 {
 	[CreateAssetMenu(fileName = "defaultAmmo", menuName = "Ammo")]
-	public class AmmoSO : ScriptableObject
+	public class AmmoScriptableObject : ScriptableObject
 	{
 		[SerializeField] private GameObject ammoObject;
 		[SerializeField] private int damage;
