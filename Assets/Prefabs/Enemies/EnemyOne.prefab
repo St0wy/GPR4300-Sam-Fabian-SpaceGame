@@ -4923,7 +4923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealthPoints: 15
   destroyWhenKilled: 1
-  destroyTime: 0
+  destroyTime: 0.3
 --- !u!114 &5643728586238046449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4949,8 +4949,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a556dc6d173fc4881fee2f2d56e95e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ps: {fileID: 0}
-  health: {fileID: 0}
 --- !u!199 &6288175816153844007
 ParticleSystemRenderer:
   serializedVersion: 6

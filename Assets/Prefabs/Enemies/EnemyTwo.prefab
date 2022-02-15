@@ -141,13 +141,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5505805c05a34f048c9b810930cc5d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  lines: []
   chosenLineIndex: 0
-  maxPosLeft: -8
-  maxPosRight: 8
+  horizontalLimit:
+    Min: -8
+    Max: 8
+  timeBetweenShoot:
+    Min: 0.5
+    Max: 1.5
 --- !u!114 &1303827198765698264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,9 +189,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 182b0ef4ecb85da47974070557281300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 0}
   items:
   - {fileID: 1857761943, guid: 43c7c61522ef4d24997f12d06e82e977, type: 3}
+  chanceToDrop: 10
 --- !u!114 &-6665771447007259594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,8 +204,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a556dc6d173fc4881fee2f2d56e95e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ps: {fileID: 1519161514768806554}
-  health: {fileID: 1303827198765698264}
 --- !u!1001 &4489298087966554567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -265,10 +264,5 @@ PrefabInstance:
 --- !u!4 &581988298277669111 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3917730996003303728, guid: 62df4a909e46fc44490bdbc4376f1095, type: 3}
-  m_PrefabInstance: {fileID: 4489298087966554567}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1519161514768806554 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3123270024772127581, guid: 62df4a909e46fc44490bdbc4376f1095, type: 3}
   m_PrefabInstance: {fileID: 4489298087966554567}
   m_PrefabAsset: {fileID: 0}
