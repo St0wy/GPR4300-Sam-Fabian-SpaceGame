@@ -7,16 +7,19 @@ namespace SpaceGame.UI
 	{
 		[SerializeField] private Button mainMenuButton;
 		[SerializeField] private Health healthComponent;
+		[SerializeField] private GameObject content;
 
 		private void Awake()
 		{
-			healthComponent.OnHurt += (healthPoints) =>
+			healthComponent.OnHurt += OnHurt;
+		}
+
+		private void OnHurt(int healthPoints)
+		{
+			if (healthPoints <= 0)
 			{
-				if (healthPoints <= 0)
-				{
-					TriggerGameOver();
-				}
-			};
+				TriggerGameOver();
+			}
 		}
 
 		public void LoadMainMenu()
@@ -29,8 +32,8 @@ namespace SpaceGame.UI
 		private void TriggerGameOver()
 		{
 			Time.timeScale = 0f;
+			content.SetActive(true);
 			mainMenuButton.Select();
-			gameObject.SetActive(true);
 		}
 	}
 }

@@ -4,22 +4,22 @@ using UnityEngine;
 namespace SpaceGame.Visuals
 {
 	[RequireComponent(typeof(SpriteRenderer))]
-	public class ImmortalEffect : MonoBehaviour
+	public class InvulFramesEffect : MonoBehaviour
 	{
-		[SerializeField] private bool enable = true;
+		[SerializeField] private bool isActive = true;
 
-		[ConditionalField(nameof(enable))]
+		[ConditionalField(nameof(isActive))]
 		[SerializeField]
-		private float period = 2.0f;
+		private float period = 0.25f;
 
 		private float alphaFactor;
 		private Color color;
 		private Color originalColor;
 
-		public bool Enable
+		public bool IsActive
 		{
-			get => enable;
-			set => enable = value;
+			get => isActive;
+			set => isActive = value;
 		}
 
 		private void Start()
@@ -30,18 +30,17 @@ namespace SpaceGame.Visuals
 
 		private void Update()
 		{
-			if (enable)
+			if (isActive)
 			{
-				SineEffect();
+				InvulEffect();
 			}
-
-			if (!enable)
+			else
 			{
 				GetComponent<SpriteRenderer>().color = originalColor;
 			}
 		}
 
-		private void SineEffect()
+		private void InvulEffect()
 		{
 			if (period <= Mathf.Epsilon) return;
 

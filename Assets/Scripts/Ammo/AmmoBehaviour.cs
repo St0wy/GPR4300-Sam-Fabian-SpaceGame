@@ -45,13 +45,15 @@ namespace SpaceGame.Ammo
 
 		private void OnTriggerEnter2D(Collider2D other)
 		{
-			if (!other.CompareTag("Enemy")) return;
+			var health = other.GetComponent<Health>();
+
+			if (health == null || health.IsInIFrame) return;
 
 			// Pools the object back to the ShootingBehaviour ammoPool
 			shooter.TakeBack(this);
 
 			// Activates damage according to the AmmoSO
-			other.GetComponent<Health>().ReduceHealth(damage);
+			health.ReduceHealth(damage);
 		}
 	}
 }

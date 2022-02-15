@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 1518496965}
   - component: {fileID: 1573438348523372663}
   - component: {fileID: 3766382374217857851}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ship
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -210,6 +210,8 @@ MonoBehaviour:
   maxHealthPoints: 15
   destroyWhenKilled: 1
   destroyTime: 0
+  hasIFrames: 1
+  iFramesDuration: 1
 --- !u!114 &2551650675439570400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +232,7 @@ MonoBehaviour:
   secondaryUsedAmmo: 0
   shootPeriod: 0.1
   secondaryAmmoAmount: 10
+  shootAngle: 90
   primaryShootSoundEffect: {fileID: 11400000, guid: f81829255f1a37c42bac32d2772324f8, type: 2}
 --- !u!95 &1518496965
 Animator:
@@ -262,8 +265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81c38014cc8ccc46be17b3b18650f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enable: 0
-  period: 2
+  isActive: 1
+  period: 0.2
 --- !u!114 &3766382374217857851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,8 +279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a556dc6d173fc4881fee2f2d56e95e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ps: {fileID: 0}
-  health: {fileID: 0}
 --- !u!1001 &7962039695895590688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -332,6 +333,10 @@ PrefabInstance:
     - target: {fileID: 5630422067737486674, guid: 62df4a909e46fc44490bdbc4376f1095, type: 3}
       propertyPath: m_Name
       value: VFXLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630422067737486674, guid: 62df4a909e46fc44490bdbc4376f1095, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62df4a909e46fc44490bdbc4376f1095, type: 3}
