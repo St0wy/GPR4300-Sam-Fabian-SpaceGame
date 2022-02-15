@@ -22,6 +22,8 @@ namespace SpaceGame.Enemies
         [SerializeField] private float spawnEnemyTwoTimerLimit = 10.0f;
         float spawnEnemyTwoTimer = 0.0f;
 
+        [SerializeField] private int nbrEnemiesToKill = 50;
+
 
         private void Update()
         {
@@ -44,13 +46,20 @@ namespace SpaceGame.Enemies
         {
             Vector3 spawnPos = transform.position;
             spawnPos.x = Random.Range(minPos, maxPos);
-            Instantiate(enemyOne, spawnPos, Quaternion.identity);
+            GameObject newEnemy = Instantiate(enemyOne, spawnPos, Quaternion.identity);
+            newEnemy.GetComponent<Health>().OnHurt += OnHurt;
         }
         private void InstantiateEnemyTwo()
         {
             GameObject newEnemy = Instantiate(enemyTwo);
             newEnemy.GetComponent<EnemyTwoInputHandler>().Lines = lines;
+            newEnemy.GetComponent<Health>().OnHurt += OnHurt;
 
+        }
+        private void OnHurt(int healthPoints)
+        {
+            if (healthPoints <= 0)
+                nbrEnemiesToKill--;
         }
 
     }
