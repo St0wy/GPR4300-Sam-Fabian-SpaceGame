@@ -3,7 +3,7 @@ using UnityEngine;
 namespace SpaceGame.Visuals
 {
 	[RequireComponent(typeof(Health))]
-	public class VFXManager : MonoBehaviour
+	public class HurtExplosionBehaviour : MonoBehaviour
 	{
 		private ParticleSystem particles;
 		private Health health;
