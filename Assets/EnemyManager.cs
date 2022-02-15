@@ -22,7 +22,7 @@ namespace SpaceGame.Enemies
         [SerializeField] private float spawnEnemyTwoTimerLimit = 10.0f;
         float spawnEnemyTwoTimer = 0.0f;
 
-        [SerializeField] int nbrEnemiesToKill = 50;
+        [SerializeField] private int nbrEnemiesToKill = 50;
 
 
         private void Update()
