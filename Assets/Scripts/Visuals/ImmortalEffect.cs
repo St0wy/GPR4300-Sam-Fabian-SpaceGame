@@ -1,57 +1,58 @@
+using MyBox;
 using UnityEngine;
 
 namespace SpaceGame.Visuals
 {
-    [RequireComponent(typeof(SpriteRenderer))]
-    public class ImmortalEffect : MonoBehaviour
-    {
-        [SerializeField] private bool enable;
+	[RequireComponent(typeof(SpriteRenderer))]
+	public class ImmortalEffect : MonoBehaviour
+	{
+		[SerializeField] private bool enable = true;
 
-        public float period = 2.0f;
-        private float alphaFactor;
-        private Color color;
-        private Color originalColor;
+		[ConditionalField(nameof(enable))]
+		[SerializeField]
+		private float period = 2.0f;
 
-        #region Properties
+		private float alphaFactor;
+		private Color color;
+		private Color originalColor;
 
-        public bool Enable
-        {
-            get => enable;
-            set => enable = value;
-        }
+		public bool Enable
+		{
+			get => enable;
+			set => enable = value;
+		}
 
-        #endregion
+		private void Start()
+		{
+			color = GetComponent<SpriteRenderer>().color;
+			originalColor = color;
+		}
 
-        private void Start()
-        {
-            color = GetComponent<SpriteRenderer>().color;
-            originalColor = color;
-        }
+		private void Update()
+		{
+			if (enable)
+			{
+				SineEffect();
+			}
 
-        private void Update()
-        {
-            if (enable)
-            {
-                SineEffect();
-            }
-            if (!enable)
-            {
-                GetComponent<SpriteRenderer>().color = originalColor;
-            }
-            
-        }
-        
-        private void SineEffect()
-        {
-            if (period <= Mathf.Epsilon) return;
-            
-            float cycle = Time.time / period;
-            const float tau = Mathf.PI * 2.0f;
-            float sineWave = Mathf.Sin(cycle * tau);
-            alphaFactor = (sineWave + 1.0f) / 2.0f; //SineWave = -1 to 1 // +1 to go from 0 to 2 // divided by 2 for 0 to 1
+			if (!enable)
+			{
+				GetComponent<SpriteRenderer>().color = originalColor;
+			}
+		}
 
-            color.a = alphaFactor;
-            GetComponent<SpriteRenderer>().color = color;
-        }
-    }
+		private void SineEffect()
+		{
+			if (period <= Mathf.Epsilon) return;
+
+			float cycle = Time.time / period;
+			const float tau = Mathf.PI * 2.0f;
+			float sineWave = Mathf.Sin(cycle * tau);
+			alphaFactor =
+				(sineWave + 1.0f) / 2.0f; //SineWave = -1 to 1 // +1 to go from 0 to 2 // divided by 2 for 0 to 1
+
+			color.a = alphaFactor;
+			GetComponent<SpriteRenderer>().color = color;
+		}
+	}
 }

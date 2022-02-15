@@ -1,4 +1,4 @@
-﻿using SpaceGame.Attributes;
+﻿using MyBox;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -6,27 +6,36 @@ namespace SpaceGame.Enemies
 {
 	public class EnemyTwoInputHandler : MonoBehaviour, IInputHandler
 	{
-		public Vector2 InputVector { get; private set; }
 		public event IInputHandler.InputEventHandler FirePrimary;
 		public event IInputHandler.InputEventHandler FireSecondary;
 		public event IInputHandler.InputEventHandler Pause;
 
 		[SerializeField] private Transform[] lines;
 
-		[ReadOnly]
+		[Attributes.ReadOnly]
 		[SerializeField]
 		private int chosenLineIndex;
 
-		[SerializeField] private float maxPosLeft = -8f;
-		[SerializeField] private float maxPosRight = 8f;
+		[Tooltip("The horizontal size of the area where the enemy can be.")]
+		[SerializeField]
+		private RangedFloat horizontalLimit = new RangedFloat(-8f, 8f);
+
+		[Tooltip("The time that the enemy spends moving between two shots.")]
+		[SerializeField]
+		private RangedFloat timeBetweenShoot = new RangedFloat(0.5f, 1.5f);
 
 		private EnemyTwoState state;
+		private float shootingTimer;
+
+		public Vector2 InputVector { get; private set; }
+		private float NextShootTime => Random.Range(timeBetweenShoot.Min, timeBetweenShoot.Max);
 
 		private void Awake()
 		{
 			InputVector = new Vector2(0, -1);
 			state = EnemyTwoState.Falling;
 			chosenLineIndex = Random.Range(0, lines.Length);
+			shootingTimer = NextShootTime;
 		}
 
 		private void Update()
@@ -38,22 +47,34 @@ namespace SpaceGame.Enemies
 					HandleFallingState();
 					break;
 				case EnemyTwoState.ShootingRight:
-					if (transform.position.x >= maxPosRight)
+					if (transform.position.x >= horizontalLimit.Max)
 					{
 						state = EnemyTwoState.ShootingLeft;
 						InputVector = new Vector2(-1, 0);
 					}
 
+					HandleShoot();
 					break;
 				case EnemyTwoState.ShootingLeft:
-					if (transform.position.x <= maxPosLeft)
+					if (transform.position.x <= horizontalLimit.Min)
 					{
 						state = EnemyTwoState.ShootingRight;
 						InputVector = new Vector2(1, 0);
 					}
 
+					HandleShoot();
 					break;
 			}
+		}
+
+		private void HandleShoot()
+		{
+			shootingTimer -= Time.deltaTime;
+
+			if (!(shootingTimer <= 0f)) return;
+			
+			FirePrimary?.Invoke();
+			shootingTimer += NextShootTime;
 		}
 
 		private void OnDrawGizmos()

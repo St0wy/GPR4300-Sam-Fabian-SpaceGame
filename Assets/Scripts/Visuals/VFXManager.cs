@@ -1,17 +1,12 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace SpaceGame.Visuals
 {
 	[RequireComponent(typeof(Health))]
-	[RequireComponent(typeof(ParticleSystem))]
 	public class VFXManager : MonoBehaviour
 	{
-		[FormerlySerializedAs("ps")]
-		[SerializeField]
 		private ParticleSystem particles;
-
-		[SerializeField] private Health health;
+		private Health health;
 
 		private void Awake()
 		{

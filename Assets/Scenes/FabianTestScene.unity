@@ -624,6 +624,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2081592230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8010429231689963994, guid: 8dbd94d71eb9eab41be7c7d4450a0209, type: 3}
+  m_PrefabInstance: {fileID: 8010429230257484204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2081592231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081592230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f8c599df83981499895d44b220ee1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primaryAmmoScriptableObjects:
+  - {fileID: 11400000, guid: 9269d8acbf1525241bd697ca2dadacfd, type: 2}
+  secondaryAmmoScriptableObjects: []
+  primaryUsedAmmo: 0
+  secondaryUsedAmmo: 0
+  shootPeriod: 0.1
+  secondaryAmmoAmount: 10
+  primaryShootSoundEffect: {fileID: 11400000, guid: f81829255f1a37c42bac32d2772324f8, type: 2}
 --- !u!114 &2090474058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -965,6 +990,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2663897460986028710, guid: 8dbd94d71eb9eab41be7c7d4450a0209, type: 3}
+      propertyPath: chanceToDrop
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8010429231689963984, guid: 8dbd94d71eb9eab41be7c7d4450a0209, type: 3}
       propertyPath: m_RootOrder
       value: 3

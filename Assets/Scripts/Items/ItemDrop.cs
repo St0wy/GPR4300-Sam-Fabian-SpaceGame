@@ -9,25 +9,29 @@ namespace SpaceGame.Items
 	[RequireComponent(typeof(Health))]
 	public class ItemDrop : MonoBehaviour
 	{
-		[SerializeField] private Health health;
 		[SerializeField] private List<Item> items;
 
+		[Tooltip("Chance to drop an item in percentages where 0 = 0% and 100 = 100%.")]
+		[SerializeField]
+		private float chanceToDrop = 10f;
+
+		private Health health;
 
 		private void Awake()
 		{
 			health = GetComponent<Health>();
+			health.OnHurt += OnHurt;
 		}
 
-		// Update is called once per frame
-		private void Update()
+		private void OnHurt(int healthPoints)
 		{
-			float random = Random.value;
+			// Check if the entity is dead
+			if (healthPoints > 0) return;
 
-			if (health.HealthPoints > 0) return;
-
-			if (items.Count != 0 && random >= 0.5f)
+			// Check if we match the chances
+			if (Random.Range(0, 100) <= chanceToDrop)
 			{
-				Instantiate(items[0]);
+				Instantiate(items[Random.Range(0, items.Count)]);
 			}
 		}
 	}

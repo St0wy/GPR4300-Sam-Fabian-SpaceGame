@@ -10,19 +10,16 @@ namespace SpaceGame.Ammo
 		[SerializeField] private int damage;
 		[SerializeField] private AmmoType ammoType = AmmoType.Primary;
 
-        #region Properties
+		public AmmoType AmmoType => ammoType;
 
-        public AmmoType AmmoType => ammoType;
-
-        #endregion
-
-		public void Init(ShootingBehaviour shootingBehaviour, Transform spawnPos, AmmoScriptableObject ammoScriptableObject)
+		public void Init(ShootingBehaviour shootingBehaviour, Transform spawnPos,
+			AmmoScriptableObject ammoScriptableObject)
 		{
 			// Gives the ShootingBehaviour as ref
 			shooter = shootingBehaviour;
 
-			// Set position
-			Transform myTransform = transform;
+			// Set position and rotation on the bullet
+			Transform myTransform = transform; // Access the transform only once to be more performant
 			myTransform.position = spawnPos.position;
 			myTransform.rotation = spawnPos.rotation;
 

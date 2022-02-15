@@ -6,12 +6,13 @@ namespace SpaceGame.Player
 {
 	public class ShipInputHandler : MonoBehaviour, IInputHandler
 	{
-		public Vector2 InputVector { get; private set; }
 		public event IInputHandler.InputEventHandler FirePrimary;
 		public event IInputHandler.InputEventHandler FireSecondary;
 		public event IInputHandler.InputEventHandler Pause;
 
 		private bool fire;
+		
+		public Vector2 InputVector { get; private set; }
 
         private void Update()
         {
