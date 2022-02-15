@@ -642,12 +642,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryAmmoScriptableObjects:
-  - {fileID: 11400000, guid: 9269d8acbf1525241bd697ca2dadacfd, type: 2}
+  - {fileID: 11400000, guid: e6d56b6e8fe4df148b624bf1f0e78354, type: 2}
   secondaryAmmoScriptableObjects: []
   primaryUsedAmmo: 0
   secondaryUsedAmmo: 0
   shootPeriod: 0.1
   secondaryAmmoAmount: 10
+  shootAngle: -90
   primaryShootSoundEffect: {fileID: 11400000, guid: f81829255f1a37c42bac32d2772324f8, type: 2}
 --- !u!114 &2090474058
 MonoBehaviour:
@@ -828,6 +829,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2332195971341554290, guid: b19d48f93409f494b92f0b047814172c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2551650675439570329, guid: b19d48f93409f494b92f0b047814172c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -875,6 +880,14 @@ PrefabInstance:
     - target: {fileID: 2551650675439570335, guid: b19d48f93409f494b92f0b047814172c, type: 3}
       propertyPath: m_Name
       value: Ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551650675439570335, guid: b19d48f93409f494b92f0b047814172c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551650675439570400, guid: b19d48f93409f494b92f0b047814172c, type: 3}
+      propertyPath: shootAngle
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b19d48f93409f494b92f0b047814172c, type: 3}

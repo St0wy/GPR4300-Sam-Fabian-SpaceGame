@@ -5,10 +5,11 @@ namespace SpaceGame.Ammo
 {
 	public class AmmoBehaviour : MonoBehaviour
 	{
-		private ShootingBehaviour shooter;
 		[SerializeField] private float disableTimer = Mathf.Infinity;
 		[SerializeField] private int damage;
 		[SerializeField] private AmmoType ammoType = AmmoType.Primary;
+
+		private ShootingBehaviour shooter;
 
 		public AmmoType AmmoType => ammoType;
 

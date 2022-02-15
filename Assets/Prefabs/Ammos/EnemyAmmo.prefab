@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8991463733270247531}
   - component: {fileID: 2406230870454217004}
   - component: {fileID: 4529271249355530129}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4950,8 +4950,8 @@ GameObject:
   - component: {fileID: 4823960591118320902}
   - component: {fileID: 5371230354179411682}
   - component: {fileID: -5075459947861391671}
-  m_Layer: 7
-  m_Name: PrimaryAmmo
+  m_Layer: 8
+  m_Name: EnemyAmmo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -28,6 +28,10 @@ namespace SpaceGame.Ammo
 		[SerializeField]
 		private int secondaryAmmoAmount = 10;
 
+		[Tooltip("The angle to where the ammo should be shot in degrees.")]
+		[SerializeField]
+		private float shootAngle = 90f;
+
 		[SerializeField] private SoundEffectScritableObject primaryShootSoundEffect;
 
 		private float timeToNextShoot;
@@ -57,8 +61,11 @@ namespace SpaceGame.Ammo
 			// Get ammo from Pool
 			AmmoBehaviour newAmmo = PrimaryAmmoPool();
 			newAmmo.Init(this, transform, primaryAmmoScriptableObjects[primaryUsedAmmo]);
+
+			// Move the ammo
+			Vector2 direction = MathHelpers.DegreeToVector2(shootAngle);
 			newAmmo.GetComponent<Rigidbody2D>()
-				.AddForce(Vector2.up * primaryAmmoScriptableObjects[primaryUsedAmmo].Speed, ForceMode2D.Force);
+				.AddForce(direction * primaryAmmoScriptableObjects[primaryUsedAmmo].Speed, ForceMode2D.Force);
 			timeToNextShoot = shootPeriod;
 
 			// Play the sound effect if it has been assigned
@@ -74,25 +81,23 @@ namespace SpaceGame.Ammo
 
 			AmmoBehaviour newAmmo = SecondaryAmmoPool();
 			newAmmo.Init(this, transform, secondaryAmmoScriptableObjects[secondaryUsedAmmo]);
+
+			Vector2 direction = MathHelpers.DegreeToVector2(shootAngle);
 			newAmmo.GetComponent<Rigidbody2D>()
-				.AddForce(Vector2.up * secondaryAmmoScriptableObjects[secondaryUsedAmmo].Speed, ForceMode2D.Force);
+				.AddForce(direction * secondaryAmmoScriptableObjects[secondaryUsedAmmo].Speed, ForceMode2D.Force);
 			secondaryAmmoAmount--;
 		}
 
-		private AmmoBehaviour PrimaryAmmoPool()
-		{
-			return primaryAmmoPool.Count == 0
+		private AmmoBehaviour PrimaryAmmoPool() =>
+			primaryAmmoPool.Count == 0
 				? Instantiate(primaryAmmoScriptableObjects[primaryUsedAmmo].AmmoObject).GetComponent<AmmoBehaviour>()
 				: primaryAmmoPool.Pop();
-		}
 
-		private AmmoBehaviour SecondaryAmmoPool()
-		{
-			return secondaryAmmoPool.Count == 0
+		private AmmoBehaviour SecondaryAmmoPool() =>
+			secondaryAmmoPool.Count == 0
 				? Instantiate(secondaryAmmoScriptableObjects[secondaryUsedAmmo].AmmoObject)
 					.GetComponent<AmmoBehaviour>()
 				: secondaryAmmoPool.Pop();
-		}
 
 		public void TakeBack(AmmoBehaviour ammo)
 		{
