@@ -1,26 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-namespace SpaceGame
+namespace SpaceGame.Visuals
 {
-    public class VFXManager : MonoBehaviour
-    {
-        [SerializeField] private ParticleSystem ps;
-        [SerializeField] private Health health;
+	[RequireComponent(typeof(Health))]
+	[RequireComponent(typeof(ParticleSystem))]
+	public class VFXManager : MonoBehaviour
+	{
+		[FormerlySerializedAs("ps")]
+		[SerializeField]
+		private ParticleSystem particles;
 
-        private void Awake()
-        {
-            health = GetComponent<Health>();
-            ps = GetComponentInChildren<ParticleSystem>();
+		[SerializeField] private Health health;
 
-            health.OnHurt += (healthpoints) =>GetsHit();
-        }
+		private void Awake()
+		{
+			health = GetComponent<Health>();
+			particles = GetComponentInChildren<ParticleSystem>();
 
-        public void GetsHit()
-        {
-            ps.Play();
-        }
-        
-    }
+			health.OnHurt += (healthpoints) => TriggerHurtVfx();
+		}
+
+		public void TriggerHurtVfx()
+		{
+			particles.Play();
+		}
+	}
 }

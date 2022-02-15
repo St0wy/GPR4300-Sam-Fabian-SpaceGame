@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using SpaceGame.Attributes;
+using UnityEditor;
 using UnityEngine;
 
 namespace SpaceGame.Editor

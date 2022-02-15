@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SpaceGame.Attributes;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace SpaceGame.Enemies

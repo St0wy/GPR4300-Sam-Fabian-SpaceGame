@@ -1,20 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace SpaceGame
+namespace SpaceGame.Visuals
 {
     public class SimpleRotator : MonoBehaviour
     {
         [SerializeField] private float speed;
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
 
-        // Update is called once per frame
-        void Update()
+        private void Update()
         {
             transform.Rotate(Vector3.forward, Time.deltaTime * speed);        
         }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SpaceGame
+namespace SpaceGame.Attributes
 {
 	/// <summary>
 	/// Read Only attribute.

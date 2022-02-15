@@ -11,7 +11,7 @@ namespace SpaceGame.Player
 		public event IInputHandler.InputEventHandler FireSecondary;
 		public event IInputHandler.InputEventHandler Pause;
 
-		private bool fire = false;
+		private bool fire;
 
         private void Update()
         {
@@ -19,10 +19,6 @@ namespace SpaceGame.Player
             {
 				FirePrimary?.Invoke();
 			}
-			else if (!fire)
-            {
-
-            }
         }
 
         [UsedImplicitly]
@@ -40,7 +36,6 @@ namespace SpaceGame.Player
 		[UsedImplicitly]
 		private void OnFire()
 		{
-			//FirePrimary?.Invoke();
 			fire = !fire;
 		}
 

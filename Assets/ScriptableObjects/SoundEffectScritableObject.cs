@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using MyBox;
 using UnityEditor;
 using UnityEngine;
@@ -24,7 +25,7 @@ namespace SpaceGame.ScriptableObjects
 
 		[SerializeField] private SoundClipPlayOrder playOrder;
 
-		[ReadOnly]
+		[Attributes.ReadOnly]
 		[SerializeField]
 		private int playIndex;
 
@@ -67,12 +68,14 @@ namespace SpaceGame.ScriptableObjects
 			DestroyImmediate(previewer.gameObject);
 		}
 
+		[UsedImplicitly]
 		[ButtonMethod]
 		private void PlayPreview()
 		{
 			Play(previewer);
 		}
 
+		[UsedImplicitly]
 		[ButtonMethod]
 		private void StopPreview()
 		{
