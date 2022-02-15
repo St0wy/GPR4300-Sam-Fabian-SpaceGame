@@ -79,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -5132784597741030218, guid: 87dc247c56886744aa59c77da79cdeb6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4923,7 +4923,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealthPoints: 15
   destroyWhenKilled: 1
-  destroyTime: 0.3
+  destroyTime: 0
+  hasIFrames: 0
+  iFramesDuration: 0.5
+  iFrameTimer: 0
 --- !u!114 &5643728586238046449
 MonoBehaviour:
   m_ObjectHideFlags: 0

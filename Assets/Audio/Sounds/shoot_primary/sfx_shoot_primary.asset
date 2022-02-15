@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clips:
   - {fileID: 8300000, guid: 4ef38e1221f09494693ebeb713001763, type: 3}
-  - {fileID: 8300000, guid: 2d2ac5e3c0c30b54ab21a31ab93b1ed0, type: 3}
-  - {fileID: 8300000, guid: 721a27518f2f78c4598a6d55da346ca3, type: 3}
   volume:
     Min: 0.48023716
     Max: 0.61857706
@@ -23,4 +21,4 @@ MonoBehaviour:
     Min: 0.86166006
     Max: 1.1185771
   playOrder: 1
-  playIndex: 2
+  playIndex: 0

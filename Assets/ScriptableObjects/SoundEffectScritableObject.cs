@@ -54,7 +54,7 @@ namespace SpaceGame.ScriptableObjects
 
 		#region Preview
 
-#if UNITY_EDITOR_WIN
+#if UNITY_EDITOR
 		private AudioSource previewer;
 
 		private void OnEnable()
@@ -65,7 +65,10 @@ namespace SpaceGame.ScriptableObjects
 
 		private void OnDisable()
 		{
-			DestroyImmediate(previewer.gameObject);
+			if (previewer != null)
+			{
+				DestroyImmediate(previewer.gameObject);
+			}
 		}
 
 		[UsedImplicitly]

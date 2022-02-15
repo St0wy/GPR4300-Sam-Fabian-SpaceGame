@@ -21,7 +21,7 @@ namespace SpaceGame
 
 		[Tooltip("Field indicating whether the object has invulnerability frames after getting hit.")]
 		[SerializeField]
-		private bool hasIFrames = false;
+		private bool hasIFrames;
 
 		[ConditionalField(nameof(hasIFrames))]
 		[Tooltip("The duration of the invulnerability.")]

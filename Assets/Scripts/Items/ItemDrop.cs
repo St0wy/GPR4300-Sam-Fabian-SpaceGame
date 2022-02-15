@@ -31,7 +31,7 @@ namespace SpaceGame.Items
 			// Check if we match the chances
 			if (Random.Range(0, 100) <= chanceToDrop)
 			{
-				Instantiate(items[Random.Range(0, items.Count)]);
+				Instantiate(items[Random.Range(0, items.Count)], gameObject.transform);
 			}
 		}
 	}

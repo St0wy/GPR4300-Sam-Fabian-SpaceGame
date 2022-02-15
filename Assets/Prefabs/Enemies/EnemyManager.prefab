@@ -45,9 +45,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   enemyOne: {fileID: 872141280730569625, guid: b62990f9734e70545aebae549b5b8a1d, type: 3}
   enemyTwo: {fileID: 8010429231689963994, guid: 8dbd94d71eb9eab41be7c7d4450a0209, type: 3}
   minPos: -8
   maxPos: 8
   spawnEnemyOneTimerLimit: 5
   spawnEnemyTwoTimerLimit: 10
+  nbrEnemiesToKill: 20
+  winScreen: {fileID: 0}

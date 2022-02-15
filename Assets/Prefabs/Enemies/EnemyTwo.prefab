@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 862005144348899211}
   - component: {fileID: 2663897460986028710}
   - component: {fileID: -6665771447007259594}
+  - component: {fileID: 2081592231}
   m_Layer: 6
   m_Name: EnemyTwo
   m_TagString: Enemy
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: -2393196760129817674, guid: c7db779df751cdd4d95043cf0636fd29, type: 3}
   m_Color: {r: 1, g: 0.38584805, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -107,14 +108,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &8010429231689963989
 MonoBehaviour:
@@ -161,9 +162,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b07a38768a45c2831bf6a42552a32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 15
+  maxHealthPoints: 30
   destroyWhenKilled: 1
-  destroyTime: 0.3
+  destroyTime: 0
+  hasIFrames: 0
+  iFramesDuration: 0.5
+  iFrameTimer: 0
 --- !u!114 &862005144348899211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +208,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a556dc6d173fc4881fee2f2d56e95e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2081592231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8010429231689963994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f8c599df83981499895d44b220ee1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primaryAmmoScriptableObjects:
+  - {fileID: 11400000, guid: e6d56b6e8fe4df148b624bf1f0e78354, type: 2}
+  secondaryAmmoScriptableObjects: []
+  primaryUsedAmmo: 0
+  secondaryUsedAmmo: 0
+  shootPeriod: 0.1
+  secondaryAmmoAmount: 10
+  shootAngle: -90
+  primaryShootSoundEffect: {fileID: 11400000, guid: f81829255f1a37c42bac32d2772324f8, type: 2}
 --- !u!1001 &4489298087966554567
 PrefabInstance:
   m_ObjectHideFlags: 0
