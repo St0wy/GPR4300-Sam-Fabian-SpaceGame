@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SecondaryAmmo1
   m_EditorClassIdentifier: 
   ammoObject: {fileID: 5590565332786571899, guid: b06b2167ad0d7f14b9d402620dd42847, type: 3}
-  damage: 2
-  speed: 300
+  damage: 15
+  speed: 500
   disableTimer: 5
   ammoType: 1
