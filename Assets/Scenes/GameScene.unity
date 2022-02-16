@@ -212,11 +212,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &140327272 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4982895854718385277, guid: b19d48f93409f494b92f0b047814172c, type: 3}
-  m_PrefabInstance: {fileID: 2551650676957798692}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &534786565 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 453209873013807495, guid: df1bcb870ebc2fe4291c36d9338fa721, type: 3}
@@ -583,25 +578,6 @@ Transform:
   m_Father: {fileID: 1747672385}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1019846456 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2551650675439570335, guid: b19d48f93409f494b92f0b047814172c, type: 3}
-  m_PrefabInstance: {fileID: 2551650676957798692}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1019846457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019846456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 388c76a383b540deaec4a875068c8a29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionSound: {fileID: 11400000, guid: b1404bfc9b93cd34cac9fcca7349f1da, type: 2}
-  particles: {fileID: 140327272}
 --- !u!1 &1129890426
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,7 +784,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2551650675439570407, guid: b19d48f93409f494b92f0b047814172c, type: 3}
   m_PrefabInstance: {fileID: 2551650676957798692}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019846456}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1b07a38768a45c2831bf6a42552a32d, type: 3}
@@ -1075,14 +1051,6 @@ PrefabInstance:
       propertyPath: healthComponent
       value: 
       objectReference: {fileID: 1518496963}
-    - target: {fileID: 453209873013807493, guid: df1bcb870ebc2fe4291c36d9338fa721, type: 3}
-      propertyPath: m_fontSize
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 453209873013807493, guid: df1bcb870ebc2fe4291c36d9338fa721, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 64
-      objectReference: {fileID: 0}
     - target: {fileID: 453209873013807494, guid: df1bcb870ebc2fe4291c36d9338fa721, type: 3}
       propertyPath: m_Name
       value: HealthUI
@@ -1239,7 +1207,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2551650675439570400, guid: b19d48f93409f494b92f0b047814172c, type: 3}
   m_PrefabInstance: {fileID: 2551650676957798692}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019846456}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87f8c599df83981499895d44b220ee1f, type: 3}
@@ -1275,10 +1243,6 @@ PrefabInstance:
     - target: {fileID: 5510268096400355452, guid: 10705969700b10149b63bb97818e6f09, type: 3}
       propertyPath: m_Name
       value: GameOverUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 5510268096400355452, guid: 10705969700b10149b63bb97818e6f09, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5510268096400355454, guid: 10705969700b10149b63bb97818e6f09, type: 3}
       propertyPath: healthComponent

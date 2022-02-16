@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 1573438348523372663}
   - component: {fileID: 3766382374217857851}
   - component: {fileID: 1019846457}
+  - component: {fileID: 5482421728564945284}
+  - component: {fileID: 3319890707119720012}
   m_Layer: 3
   m_Name: Ship
   m_TagString: Player
@@ -295,6 +297,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionSound: {fileID: 11400000, guid: b1404bfc9b93cd34cac9fcca7349f1da, type: 2}
   particles: {fileID: 4982895854718385277}
+--- !u!114 &5482421728564945284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551650675439570335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388c76a383b540deaec4a875068c8a29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionSound: {fileID: 11400000, guid: b1404bfc9b93cd34cac9fcca7349f1da, type: 2}
+  particles: {fileID: 4982895854718385277}
+--- !u!114 &3319890707119720012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551650675439570335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe6c0f4b5f7423d8868e2774cbb0257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hurtSound: {fileID: 11400000, guid: 9fc1dc82cf14f7a42829874980430504, type: 2}
 --- !u!1001 &7962039695895590688
 PrefabInstance:
   m_ObjectHideFlags: 0

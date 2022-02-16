@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ea1bfd3f3c04c0e8c768df2fa0dcb17, type: 3}
-  m_Name: explosion
+  m_Name: hurt
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 24b1ec5d81dfa64459bc38a664c32e36, type: 3}
-  - {fileID: 8300000, guid: 7e9e6b59cde566f449a8445584721f76, type: 3}
-  - {fileID: 8300000, guid: b078e9c77ce68494e9447274e374dc61, type: 3}
+  - {fileID: 8300000, guid: 7c0872e22ec185c458f85ce4f0d0b182, type: 3}
+  - {fileID: 8300000, guid: 61c6945ccd240d34cb17498663c5770a, type: 3}
+  - {fileID: 8300000, guid: 9ca11d6ae368aef4d98ce0fa105ca1b0, type: 3}
   volume:
-    Min: 0.32255384
-    Max: 0.48146084
+    Min: 0.46654585
+    Max: 0.5752717
   pitch:
-    Min: 0.8996376
+    Min: 0.92472816
     Max: 1.1003624
   playOrder: 0
   playIndex: 1
