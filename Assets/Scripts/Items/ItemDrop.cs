@@ -29,10 +29,11 @@ namespace SpaceGame.Items
 			if (healthPoints > 0) return;
 
 			// Check if we match the chances
-			if (Random.Range(0, 100) <= chanceToDrop)
-			{
-				Instantiate(items[Random.Range(0, items.Count)], gameObject.transform);
-			}
+			if (!(Random.Range(0, 100) <= chanceToDrop)) return;
+			
+			GameObject o;
+			Instantiate(items[Random.Range(0, items.Count)], (o = gameObject).transform.position,
+				o.transform.rotation);
 		}
 	}
 }

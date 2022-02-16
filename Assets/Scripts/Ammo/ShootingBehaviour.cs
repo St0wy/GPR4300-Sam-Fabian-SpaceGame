@@ -39,6 +39,8 @@ namespace SpaceGame.Ammo
 		private Stack<AmmoBehaviour> primaryAmmoPool;
 		private Stack<AmmoBehaviour> secondaryAmmoPool;
 
+		public int SecondaryAmmoAmount => secondaryAmmoAmount;
+
 		private void Awake()
 		{
 			inputHandler = GetComponent<IInputHandler>();

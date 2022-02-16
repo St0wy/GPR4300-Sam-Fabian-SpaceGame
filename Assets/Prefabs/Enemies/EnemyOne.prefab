@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5643728586238046449}
   - component: {fileID: 6778439733475612348}
   - component: {fileID: 6288175816153844007}
+  - component: {fileID: 6349195611191030949}
   m_Layer: 6
   m_Name: EnemyOne
   m_TagString: Enemy
@@ -5018,3 +5019,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &6349195611191030949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872141280730569625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 182b0ef4ecb85da47974070557281300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 1857761943, guid: 43c7c61522ef4d24997f12d06e82e977, type: 3}
+  chanceToDrop: 30

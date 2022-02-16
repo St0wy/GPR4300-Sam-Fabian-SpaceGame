@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - {fileID: 1857761943, guid: 43c7c61522ef4d24997f12d06e82e977, type: 3}
-  chanceToDrop: 10
+  chanceToDrop: 50
 --- !u!114 &-6665771447007259594
 MonoBehaviour:
   m_ObjectHideFlags: 0

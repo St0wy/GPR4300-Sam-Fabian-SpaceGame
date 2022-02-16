@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 506db4ee42af6b947ab7321c8bbe472b
   - enabled: 1
-    path: Assets/Scenes/FabianTestScene.unity
+    path: Assets/Scenes/GameScene.unity
     guid: ad3d11ef0186f9f4abf6269e6b236b47
   m_configObjects: {}
