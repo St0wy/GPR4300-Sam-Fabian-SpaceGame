@@ -33,11 +33,11 @@ namespace SpaceGame.Ammo
 		private float shootAngle = 90f;
 
 		[SerializeField] private SoundEffectScritableObject primaryShootSoundEffect;
-
-		private float timeToNextShoot;
 		private IInputHandler inputHandler;
 		private Stack<AmmoBehaviour> primaryAmmoPool;
 		private Stack<AmmoBehaviour> secondaryAmmoPool;
+
+		private float timeToNextShoot;
 
 		public int SecondaryAmmoAmount => secondaryAmmoAmount;
 

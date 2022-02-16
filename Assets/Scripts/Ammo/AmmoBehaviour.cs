@@ -13,26 +13,6 @@ namespace SpaceGame.Ammo
 
 		public AmmoType AmmoType => ammoType;
 
-		public void Init(ShootingBehaviour shootingBehaviour, Transform spawnPos,
-			AmmoScriptableObject ammoScriptableObject)
-		{
-			// Gives the ShootingBehaviour as ref
-			shooter = shootingBehaviour;
-
-			// Set position and rotation on the bullet
-			Transform myTransform = transform; // Access the transform only once to be more performant
-			myTransform.position = spawnPos.position;
-			myTransform.rotation = spawnPos.rotation;
-
-			// Set Main variables
-			damage = ammoScriptableObject.Damage;
-			disableTimer = ammoScriptableObject.DisableTimer;
-			ammoType = ammoScriptableObject.AmmoType;
-
-			// Enable object once placed
-			gameObject.SetActive(true);
-		}
-
 		private void Update()
 		{
 			disableTimer -= Time.deltaTime;
@@ -54,6 +34,26 @@ namespace SpaceGame.Ammo
 
 			// Activates damage according to the AmmoSO
 			health.ReduceHealth(damage);
+		}
+
+		public void Init(ShootingBehaviour shootingBehaviour, Transform spawnPos,
+			AmmoScriptableObject ammoScriptableObject)
+		{
+			// Gives the ShootingBehaviour as ref
+			shooter = shootingBehaviour;
+
+			// Set position and rotation on the bullet
+			Transform myTransform = transform; // Access the transform only once to be more performant
+			myTransform.position = spawnPos.position;
+			myTransform.rotation = spawnPos.rotation;
+
+			// Set Main variables
+			damage = ammoScriptableObject.Damage;
+			disableTimer = ammoScriptableObject.DisableTimer;
+			ammoType = ammoScriptableObject.AmmoType;
+
+			// Enable object once placed
+			gameObject.SetActive(true);
 		}
 	}
 }

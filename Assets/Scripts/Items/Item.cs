@@ -4,7 +4,7 @@ using UnityEngine;
 namespace SpaceGame.Items
 {
 	/// <summary>
-	/// Item that refills the secondary weapon of the player.
+	///     Item that refills the secondary weapon of the player.
 	/// </summary>
 	public class Item : MonoBehaviour
 	{
@@ -12,12 +12,12 @@ namespace SpaceGame.Items
 		[SerializeField]
 		private int refillAmount = 1;
 
-		void OnTriggerEnter2D(Collider2D col)
+		private void OnTriggerEnter2D(Collider2D col)
 		{
 			if (!col.CompareTag("Player")) return;
 
 			col.GetComponent<ShootingBehaviour>().FillSecondaryAmmo(refillAmount);
 			Destroy(gameObject);
 		}
-    }
+	}
 }

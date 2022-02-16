@@ -1,5 +1,4 @@
-﻿using System;
-using SpaceGame.ScriptableObjects;
+﻿using SpaceGame.ScriptableObjects;
 using UnityEngine;
 
 namespace SpaceGame.Player

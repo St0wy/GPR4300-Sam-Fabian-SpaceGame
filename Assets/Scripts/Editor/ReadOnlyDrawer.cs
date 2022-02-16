@@ -5,13 +5,13 @@ using UnityEngine;
 namespace SpaceGame.Editor
 {
 	/// <summary>
-	/// This class contain custom drawer for ReadOnly attribute.
+	///     This class contain custom drawer for ReadOnly attribute.
 	/// </summary>
 	[CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
 	public class ReadOnlyDrawer : PropertyDrawer
 	{
 		/// <summary>
-		/// Unity method for drawing GUI in Editor
+		///     Unity method for drawing GUI in Editor
 		/// </summary>
 		/// <param name="position">Position.</param>
 		/// <param name="property">Property.</param>
@@ -20,13 +20,13 @@ namespace SpaceGame.Editor
 		{
 			// Saving previous GUI enabled value
 			bool previousGUIState = GUI.enabled;
-			
+
 			// Disabling edit for property
 			GUI.enabled = false;
-			
+
 			// Drawing Property
 			EditorGUI.PropertyField(position, property, label);
-			
+
 			// Setting old GUI enabled value
 			GUI.enabled = previousGUIState;
 		}

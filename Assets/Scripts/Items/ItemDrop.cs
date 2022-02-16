@@ -4,7 +4,7 @@ using UnityEngine;
 namespace SpaceGame.Items
 {
 	/// <summary>
-	/// Script to put on any object that has to drop "loot"
+	///     Script to put on any object that has to drop "loot"
 	/// </summary>
 	[RequireComponent(typeof(Health))]
 	public class ItemDrop : MonoBehaviour
@@ -30,7 +30,7 @@ namespace SpaceGame.Items
 
 			// Check if we match the chances
 			if (!(Random.Range(0, 100) <= chanceToDrop)) return;
-			
+
 			Instantiate(items[Random.Range(0, items.Count)], transform.position,
 				transform.rotation);
 		}

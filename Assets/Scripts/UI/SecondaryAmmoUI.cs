@@ -1,4 +1,3 @@
-using System;
 using SpaceGame.Ammo;
 using TMPro;
 using UnityEngine;

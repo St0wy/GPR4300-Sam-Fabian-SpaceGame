@@ -1,5 +1,4 @@
-﻿using System;
-using SpaceGame.ScriptableObjects;
+﻿using SpaceGame.ScriptableObjects;
 using UnityEngine;
 
 namespace SpaceGame
@@ -14,7 +13,7 @@ namespace SpaceGame
 		private void Awake()
 		{
 			health = GetComponent<Health>();
-			health.OnHurt += (healthPoints) =>
+			health.OnHurt += healthPoints =>
 			{
 				if (healthPoints <= 0)
 				{

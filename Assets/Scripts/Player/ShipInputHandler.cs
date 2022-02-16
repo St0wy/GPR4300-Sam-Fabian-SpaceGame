@@ -6,23 +6,23 @@ namespace SpaceGame.Player
 {
 	public class ShipInputHandler : MonoBehaviour, IInputHandler
 	{
+		private bool fire;
+
+		private void Update()
+		{
+			if (fire)
+			{
+				FirePrimary?.Invoke();
+			}
+		}
+
 		public event IInputHandler.InputEventHandler FirePrimary;
 		public event IInputHandler.InputEventHandler FireSecondary;
 		public event IInputHandler.InputEventHandler Pause;
 
-		private bool fire;
-		
 		public Vector2 InputVector { get; private set; }
 
-        private void Update()
-        {
-            if (fire)
-            {
-				FirePrimary?.Invoke();
-			}
-        }
-
-        [UsedImplicitly]
+		[UsedImplicitly]
 		private void OnMove(InputValue value)
 		{
 			InputVector = value.Get<Vector2>();

@@ -1,5 +1,4 @@
-﻿using System;
-using SpaceGame.Enemies;
+﻿using SpaceGame.Enemies;
 using TMPro;
 using UnityEngine;
 
