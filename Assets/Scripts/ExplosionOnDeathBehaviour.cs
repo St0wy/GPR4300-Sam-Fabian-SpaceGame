@@ -13,7 +13,6 @@ namespace SpaceGame
 
 		private void Awake()
 		{
-			particles = GetComponent<ParticleSystem>();
 			health = GetComponent<Health>();
 			health.OnHurt += (healthPoints) =>
 			{
