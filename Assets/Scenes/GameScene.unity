@@ -6040,9 +6040,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1298928904}
     m_Modifications:
+    - target: {fileID: 5292848417217899286, guid: 10705969700b10149b63bb97818e6f09, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5510268096400355452, guid: 10705969700b10149b63bb97818e6f09, type: 3}
       propertyPath: m_Name
       value: GameOverUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510268096400355452, guid: 10705969700b10149b63bb97818e6f09, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5510268096400355454, guid: 10705969700b10149b63bb97818e6f09, type: 3}
       propertyPath: healthComponent
