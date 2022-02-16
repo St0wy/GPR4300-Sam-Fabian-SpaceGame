@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2663897460986028710}
   - component: {fileID: -6665771447007259594}
   - component: {fileID: 2081592231}
+  - component: {fileID: 8599068259443414412}
   m_Layer: 6
   m_Name: EnemyTwo
   m_TagString: Enemy
@@ -229,6 +230,20 @@ MonoBehaviour:
   secondaryAmmoAmount: 10
   shootAngle: -90
   primaryShootSoundEffect: {fileID: 11400000, guid: f81829255f1a37c42bac32d2772324f8, type: 2}
+--- !u!114 &8599068259443414412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8010429231689963994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388c76a383b540deaec4a875068c8a29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionSound: {fileID: 11400000, guid: b1404bfc9b93cd34cac9fcca7349f1da, type: 2}
+  particles: {fileID: 1519161514768806554}
 --- !u!1001 &4489298087966554567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -289,5 +304,10 @@ PrefabInstance:
 --- !u!4 &581988298277669111 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3917730996003303728, guid: 62df4a909e46fc44490bdbc4376f1095, type: 3}
+  m_PrefabInstance: {fileID: 4489298087966554567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1519161514768806554 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3123270024772127581, guid: 62df4a909e46fc44490bdbc4376f1095, type: 3}
   m_PrefabInstance: {fileID: 4489298087966554567}
   m_PrefabAsset: {fileID: 0}

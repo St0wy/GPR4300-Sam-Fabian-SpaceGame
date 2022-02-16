@@ -5,7 +5,6 @@ using UnityEngine;
 namespace SpaceGame
 {
 	[RequireComponent(typeof(Health))]
-	[RequireComponent(typeof(ParticleSystem))]
 	public class ExplosionOnDeathBehaviour : MonoBehaviour
 	{
 		[SerializeField] private SoundEffectScritableObject explosionSound;

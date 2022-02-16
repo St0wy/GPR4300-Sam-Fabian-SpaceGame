@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 1518496965}
   - component: {fileID: 1573438348523372663}
   - component: {fileID: 3766382374217857851}
+  - component: {fileID: 1019846457}
   m_Layer: 3
   m_Name: Ship
   m_TagString: Player
@@ -280,6 +281,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a556dc6d173fc4881fee2f2d56e95e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1019846457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551650675439570335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388c76a383b540deaec4a875068c8a29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionSound: {fileID: 11400000, guid: b1404bfc9b93cd34cac9fcca7349f1da, type: 2}
+  particles: {fileID: 4982895854718385277}
 --- !u!1001 &7962039695895590688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -344,5 +359,10 @@ PrefabInstance:
 --- !u!4 &6350158480325346832 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3917730996003303728, guid: 62df4a909e46fc44490bdbc4376f1095, type: 3}
+  m_PrefabInstance: {fileID: 7962039695895590688}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4982895854718385277 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3123270024772127581, guid: 62df4a909e46fc44490bdbc4376f1095, type: 3}
   m_PrefabInstance: {fileID: 7962039695895590688}
   m_PrefabAsset: {fileID: 0}
