@@ -14,10 +14,18 @@ namespace SpaceGame
 			inputHandler.Pause += Pause;
 		}
 
-		private void FixedUpdate()
+        private void FixedUpdate()
 		{
 			Vector3 movement = inputHandler.InputVector * (speed * Time.deltaTime);
 
+            if (this.CompareTag("Player"))
+            {
+				var pos = Camera.main.WorldToViewportPoint(transform.position);
+				pos.x = Mathf.Clamp(pos.x, 0.07f, 0.93f);
+				pos.y = Mathf.Clamp(pos.y, 0.07f, 0.93f);
+				transform.position = Camera.main.ViewportToWorldPoint(pos);
+			}
+			
 			transform.position += movement;
 		}
 
@@ -26,4 +34,5 @@ namespace SpaceGame
 			Debug.Log("C'est la pause");
 		}
 	}
+		
 }
