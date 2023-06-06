@@ -339,7 +339,7 @@ TextureImporter:
       213: -6963190684686141984
     second: fire_bullets_111
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -356,10 +356,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -398,6 +400,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -409,6 +413,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -421,6 +426,33 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -2788,9 +2820,121 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      fire_bullets_0: 3660426787173019514
+      fire_bullets_1: 5991225110417874545
+      fire_bullets_10: 37395294382147675
+      fire_bullets_100: 4813648213975745236
+      fire_bullets_101: -4116142052497457539
+      fire_bullets_102: -4001620698671757676
+      fire_bullets_103: 8328724327099323295
+      fire_bullets_104: -4593012038718504504
+      fire_bullets_105: -1050592120422791443
+      fire_bullets_106: -1983954294860392586
+      fire_bullets_107: -2751950644051863325
+      fire_bullets_108: -437844621015128540
+      fire_bullets_109: -5505745363220552754
+      fire_bullets_11: -4111697431458272449
+      fire_bullets_110: -7734262416457170569
+      fire_bullets_111: -6963190684686141984
+      fire_bullets_12: -6447522715440399188
+      fire_bullets_13: -2924084696949326704
+      fire_bullets_14: 6319275652013801230
+      fire_bullets_15: 1506877507437381697
+      fire_bullets_16: -3697741984046758356
+      fire_bullets_17: 8435572862279982501
+      fire_bullets_18: 8613444247252713407
+      fire_bullets_19: -8562944041120617295
+      fire_bullets_2: -8551678617536067072
+      fire_bullets_20: 2142760365297143070
+      fire_bullets_21: 820583185322195989
+      fire_bullets_22: -7914393485907374328
+      fire_bullets_23: 166598208792961446
+      fire_bullets_24: -73305231594047851
+      fire_bullets_25: 3682437207602178570
+      fire_bullets_26: 8769630289547636757
+      fire_bullets_27: 9201030445928651452
+      fire_bullets_28: 3231964869669223252
+      fire_bullets_29: 199049756860794460
+      fire_bullets_3: -4431669143331135836
+      fire_bullets_30: -1037240565162385555
+      fire_bullets_31: -1773863908506927005
+      fire_bullets_32: 3973671542826788436
+      fire_bullets_33: 5999770428920357496
+      fire_bullets_34: -3866251773150607236
+      fire_bullets_35: 2293416915488404726
+      fire_bullets_36: 1747332247035201046
+      fire_bullets_37: 4328753297250681614
+      fire_bullets_38: 8680350915950178101
+      fire_bullets_39: -3431212848250785847
+      fire_bullets_4: 4364865657308711168
+      fire_bullets_40: 7344042438474293644
+      fire_bullets_41: 1420412594112790301
+      fire_bullets_42: -3984486971515407010
+      fire_bullets_43: 8550758375610334596
+      fire_bullets_44: 1548149685995753371
+      fire_bullets_45: -1154535404010664396
+      fire_bullets_46: 7324276788909572555
+      fire_bullets_47: -1458032288994054303
+      fire_bullets_48: 6438018477527863650
+      fire_bullets_49: 7854090459070802752
+      fire_bullets_5: -634457827813082448
+      fire_bullets_50: -4431665168561739277
+      fire_bullets_51: -1862675930416829909
+      fire_bullets_52: -254641980761097603
+      fire_bullets_53: -253230124473077803
+      fire_bullets_54: 9219937440748349256
+      fire_bullets_55: 518414987750520815
+      fire_bullets_56: 2330939465668258114
+      fire_bullets_57: -2328386107495194976
+      fire_bullets_58: -8156247152509853986
+      fire_bullets_59: 2770639381128248036
+      fire_bullets_6: -7753433450901676258
+      fire_bullets_60: 5769897669813218951
+      fire_bullets_61: -857672932788143656
+      fire_bullets_62: -7351314535207627362
+      fire_bullets_63: 5686592137113487653
+      fire_bullets_64: 5377185277483069244
+      fire_bullets_65: 3923267517666242027
+      fire_bullets_66: -426682462579862681
+      fire_bullets_67: -7351219612405601235
+      fire_bullets_68: -8015716924323058466
+      fire_bullets_69: 8051226946307513903
+      fire_bullets_7: 4987964130175276075
+      fire_bullets_70: 5297217905053985483
+      fire_bullets_71: -5934804802500074480
+      fire_bullets_72: 1796120911255186887
+      fire_bullets_73: 6994283957926899696
+      fire_bullets_74: 5686386470301736341
+      fire_bullets_75: -2583649626903009681
+      fire_bullets_76: 554586416455794921
+      fire_bullets_77: 327623768757790936
+      fire_bullets_78: -6610926306821525293
+      fire_bullets_79: -2158082194666509349
+      fire_bullets_8: -8303039508203193742
+      fire_bullets_80: 4469356723202366018
+      fire_bullets_81: 6378513695729232854
+      fire_bullets_82: 1348119042818971055
+      fire_bullets_83: 3275983880055031865
+      fire_bullets_84: -5528092194466480037
+      fire_bullets_85: -7390289617145292465
+      fire_bullets_86: 3102533987912780014
+      fire_bullets_87: -1627216439890319852
+      fire_bullets_88: -8445685594940555306
+      fire_bullets_89: -7537002918906078258
+      fire_bullets_9: -1669576831688982250
+      fire_bullets_90: 8296737526868288331
+      fire_bullets_91: -2274543670463588635
+      fire_bullets_92: 1974551775426273516
+      fire_bullets_93: -408026710158386391
+      fire_bullets_94: -8543486278474905096
+      fire_bullets_95: 2497676399557568858
+      fire_bullets_96: 6146558780499682073
+      fire_bullets_97: -4486662211867811547
+      fire_bullets_98: 3988626320013582949
+      fire_bullets_99: 666028688379912494
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
